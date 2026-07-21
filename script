@@ -21,11 +21,11 @@ const types = [
 
 
 const descriptions = [
-    "A mysterious Pokémon known for its unusual behavior.",
-    "A rare Pokémon that adapts to its surroundings.",
-    "This Pokémon is said to appear only to special trainers.",
-    "A curious Pokémon with hidden abilities.",
-    "A Pokémon that forms strong bonds with its trainer."
+    "A mysterious SyCoMon known for its unusual behavior.",
+    "A rare SyCoMon that adapts to its surroundings.",
+    "This SyCoMon is said to appear only to special trainers.",
+    "A curious SyCoMon with hidden abilities.",
+    "A SyCoMon that forms strong bonds with its trainer."
 ];
 
 
@@ -52,7 +52,7 @@ function seededRandom(seed) {
 
 
 
-function generatePokemon() {
+function generateSyCoMon() {
 
     let name = document.getElementById("nameInput").value.trim();
 
@@ -87,23 +87,23 @@ function generatePokemon() {
 
 
 
-    document.getElementById("pokemonName").innerText =
+    document.getElementById("SyCoMonName").innerText =
         name;
 
 
-    document.getElementById("pokemonType").innerText =
+    document.getElementById("SyCoMonType").innerText =
         type;
 
 
-    document.getElementById("pokemonHeight").innerText =
+    document.getElementById("SyCoMonHeight").innerText =
         height + " m";
 
 
-    document.getElementById("pokemonWeight").innerText =
+    document.getElementById("SyCoMonWeight").innerText =
         weight + " kg";
 
 
-    document.getElementById("pokemonDescription").innerText =
+    document.getElementById("SyCoMonDescription").innerText =
         description;
 
 }
