@@ -225,15 +225,6 @@ const habitats = [
 ];
 
 
-const entries = [
-    "This SyCoMon is rarely seen and is surrounded by many legends.",
-    "Trainers who encounter this SyCoMon often remember the experience forever.",
-    "It adapts to its environment in surprising ways.",
-    "Many people believe this SyCoMon has a special connection to nature.",
-    "Although unusual, this SyCoMon is known for its gentle nature."
-];
-
-
 // Convert name into a consistent seed
 function createSeed(name) {
 
