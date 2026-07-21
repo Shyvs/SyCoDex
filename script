@@ -91,7 +91,7 @@ function seededRandom(seed) {
 
 
 
-function generateSyCoMon() {
+function generatesycomon() {
 
     let name = document
         .getElementById("nameInput")
@@ -148,23 +148,23 @@ function generateSyCoMon() {
 
 
 
-    document.getElementById("SyCoMonName").innerText = name;
+    document.getElementById("sycomonName").innerText = name;
 
-    document.getElementById("SyCoMonType").innerText =
+    document.getElementById("sycomonType").innerText =
         type1 + " / " + type2;
 
-    document.getElementById("SyCoMonCategory").innerText =
+    document.getElementById("sycomonCategory").innerText =
         category;
 
-    document.getElementById("SyCoMonAppearance").innerText =
+    document.getElementById("sycomonAppearance").innerText =
         appearance;
 
-    document.getElementById("SyCoMonPersonality").innerText =
+    document.getElementById("sycomonPersonality").innerText =
         personality;
 
-    document.getElementById("SyCoMonHabitat").innerText =
+    document.getElementById("sycomonHabitat").innerText =
         habitat;
 
-    document.getElementById("SyCoMonDescription").innerText =
+    document.getElementById("sycomonDescription").innerText =
         entry;
 }
