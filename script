@@ -95,6 +95,8 @@ function seededRandom(seed) {
 
 function generatesycomon() {
 
+    console.log("Generate button pressed");
+
     let name = document
         .getElementById("nameInput")
         .value
