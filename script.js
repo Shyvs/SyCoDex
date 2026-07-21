@@ -286,8 +286,8 @@ const details = [
     "It leaves behind traces of energy as it moves.",
     "Its markings change depending on its mood.",
     "It carries objects it finds interesting.",
-    "Its appearance changes slightly with the seasons."
-     "Small sparks of energy dance around its body.",
+    "Its appearance changes slightly with the seasons.",
+    "Small sparks of energy dance around its body.",
     "Its eyes glow when it becomes excited.",
     "It leaves behind a trail of glowing footprints.",
     "Its fur, scales, or surface shifts colors in different lighting.",
