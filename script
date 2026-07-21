@@ -1,3 +1,5 @@
+console.log("SyCoDex loaded");
+
 const types = [
     "Fire",
     "Water",
