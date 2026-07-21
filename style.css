@@ -1,6 +1,13 @@
-body{
-    background:#222;
-    color:white;
-    font-family:Arial;
-    text-align:center;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+#pokemonCard {
+    background: white;
+    width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
 }
