@@ -3,38 +3,77 @@ const types = [
     "Water",
     "Grass",
     "Electric",
-    "Ghost",
-    "Dark",
-    "Psychic",
-    "Dragon",
-    "Bug",
-    "Steel",
-    "Fairy"
+    "Ice",
     "Fighting",
     "Poison",
     "Ground",
     "Flying",
-    "Normal",
+    "Psychic",
+    "Bug",
     "Rock",
-    "Ice"
+    "Ghost",
+    "Dragon",
+    "Dark",
+    "Steel",
+    "Fairy",
+    "Normal"
 ];
 
 
-const descriptions = [
-    "A mysterious SyCoMon known for its unusual behavior.",
-    "A rare SyCoMon that adapts to its surroundings.",
-    "This SyCoMon is said to appear only to special trainers.",
-    "A curious SyCoMon with hidden abilities.",
-    "A SyCoMon that forms strong bonds with its trainer."
+const categories = [
+    "The Forest SyCoMon",
+    "The Dream SyCoMon",
+    "The Shadow SyCoMon",
+    "The Ancient SyCoMon",
+    "The Spirit SyCoMon",
+    "The Guardian SyCoMon",
+    "The Mischief SyCoMon"
 ];
 
 
-// Converts the name into a consistent number
+const appearances = [
+    "A small creature with glowing markings and unusual features.",
+    "A mysterious SyCoMon with a unique body shape and strange abilities.",
+    "A fluffy creature covered in soft fur and colorful patterns.",
+    "A sleek SyCoMon with sharp features and an intimidating appearance.",
+    "A tiny SyCoMon that appears fragile but hides great strength."
+];
+
+
+const personalities = [
+    "Curious and playful, it enjoys exploring new places.",
+    "Quiet and mysterious, it prefers to observe from a distance.",
+    "Friendly and loyal, it forms strong bonds with trainers.",
+    "Mischievous and clever, it enjoys surprising others.",
+    "Protective and brave, it watches over its territory."
+];
+
+
+const habitats = [
+    "Deep forests",
+    "Ancient ruins",
+    "Mountain caves",
+    "Coastal areas",
+    "Abandoned places",
+    "Open fields"
+];
+
+
+const entries = [
+    "This SyCoMon is rarely seen and is surrounded by many legends.",
+    "Trainers who encounter this SyCoMon often remember the experience forever.",
+    "It adapts to its environment in surprising ways.",
+    "Many people believe this SyCoMon has a special connection to nature.",
+    "Although unusual, this SyCoMon is known for its gentle nature."
+];
+
+
+// Convert name into a consistent seed
 function createSeed(name) {
 
     let seed = 0;
 
-    for (let i = 0; i < name.length; i++) {
+    for(let i = 0; i < name.length; i++) {
         seed += name.charCodeAt(i);
     }
 
@@ -42,7 +81,7 @@ function createSeed(name) {
 }
 
 
-// Generates repeatable randomness
+// Repeatable random generator
 function seededRandom(seed) {
 
     let x = Math.sin(seed) * 10000;
@@ -54,56 +93,78 @@ function seededRandom(seed) {
 
 function generateSyCoMon() {
 
-    let name = document.getElementById("nameInput").value.trim();
+    let name = document
+        .getElementById("nameInput")
+        .value
+        .trim();
 
 
-    if(name === "") {
-        return;
-    }
+    if(name === "") return;
 
 
     let seed = createSeed(name.toLowerCase());
 
 
-    let type = types[
-        Math.floor(seededRandom(seed) * types.length)
-    ];
+    let type1 =
+        types[Math.floor(
+            seededRandom(seed) * types.length
+        )];
 
 
-    let height =
-        (0.3 + seededRandom(seed + 1) * 3)
-        .toFixed(1);
+    let type2 =
+        types[Math.floor(
+            seededRandom(seed + 1) * types.length
+        )];
 
 
-    let weight =
-        (1 + seededRandom(seed + 2) * 100)
-        .toFixed(1);
+    let category =
+        categories[Math.floor(
+            seededRandom(seed + 2) * categories.length
+        )];
 
 
-    let description =
-        descriptions[
-            Math.floor(seededRandom(seed + 3) * descriptions.length)
-        ];
+    let appearance =
+        appearances[Math.floor(
+            seededRandom(seed + 3) * appearances.length
+        )];
+
+
+    let personality =
+        personalities[Math.floor(
+            seededRandom(seed + 4) * personalities.length
+        )];
+
+
+    let habitat =
+        habitats[Math.floor(
+            seededRandom(seed + 5) * habitats.length
+        )];
+
+
+    let entry =
+        entries[Math.floor(
+            seededRandom(seed + 6) * entries.length
+        )];
 
 
 
-    document.getElementById("SyCoMonName").innerText =
-        name;
-
+    document.getElementById("SyCoMonName").innerText = name;
 
     document.getElementById("SyCoMonType").innerText =
-        type;
+        type1 + " / " + type2;
 
+    document.getElementById("SyCoMonCategory").innerText =
+        category;
 
-    document.getElementById("SyCoMonHeight").innerText =
-        height + " m";
+    document.getElementById("SyCoMonAppearance").innerText =
+        appearance;
 
+    document.getElementById("SyCoMonPersonality").innerText =
+        personality;
 
-    document.getElementById("SyCoMonWeight").innerText =
-        weight + " kg";
-
+    document.getElementById("SyCoMonHabitat").innerText =
+        habitat;
 
     document.getElementById("SyCoMonDescription").innerText =
-        description;
-
+        entry;
 }
