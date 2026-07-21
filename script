@@ -1,0 +1,102 @@
+const types = [
+    "Fire",
+    "Water",
+    "Grass",
+    "Electric",
+    "Ghost",
+    "Dark",
+    "Psychic",
+    "Dragon",
+    "Bug",
+    "Steel",
+    "Fairy"
+];
+
+
+const descriptions = [
+    "A mysterious Pokémon known for its unusual behavior.",
+    "A rare Pokémon that adapts to its surroundings.",
+    "This Pokémon is said to appear only to special trainers.",
+    "A curious Pokémon with hidden abilities.",
+    "A Pokémon that forms strong bonds with its trainer."
+];
+
+
+// Converts the name into a consistent number
+function createSeed(name) {
+
+    let seed = 0;
+
+    for (let i = 0; i < name.length; i++) {
+        seed += name.charCodeAt(i);
+    }
+
+    return seed;
+}
+
+
+// Generates repeatable randomness
+function seededRandom(seed) {
+
+    let x = Math.sin(seed) * 10000;
+
+    return x - Math.floor(x);
+}
+
+
+
+function generatePokemon() {
+
+    let name = document.getElementById("nameInput").value.trim();
+
+
+    if(name === "") {
+        return;
+    }
+
+
+    let seed = createSeed(name.toLowerCase());
+
+
+    let type = types[
+        Math.floor(seededRandom(seed) * types.length)
+    ];
+
+
+    let height =
+        (0.3 + seededRandom(seed + 1) * 3)
+        .toFixed(1);
+
+
+    let weight =
+        (1 + seededRandom(seed + 2) * 100)
+        .toFixed(1);
+
+
+    let description =
+        descriptions[
+            Math.floor(seededRandom(seed + 3) * descriptions.length)
+        ];
+
+
+
+    document.getElementById("pokemonName").innerText =
+        name;
+
+
+    document.getElementById("pokemonType").innerText =
+        type;
+
+
+    document.getElementById("pokemonHeight").innerText =
+        height + " m";
+
+
+    document.getElementById("pokemonWeight").innerText =
+        weight + " kg";
+
+
+    document.getElementById("pokemonDescription").innerText =
+        description;
+
+}
