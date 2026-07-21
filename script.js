@@ -526,12 +526,6 @@ let appearance =
             seededRandom(seed + 5) * habitats.length
         )];
 
-
-    let entry =
-        entries[Math.floor(
-            seededRandom(seed + 6) * entries.length
-        )];
-
     document.getElementById("sycomonName").innerText = name;
 
     document.getElementById("sycomonType").innerText =
@@ -545,7 +539,4 @@ let appearance =
 
     document.getElementById("sycomonHabitat").innerText =
         habitat;
-
-    document.getElementById("sycomonDescription").innerText =
-        entry;
 }
