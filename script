@@ -1,4 +1,5 @@
 console.log("SyCoDex loaded");
+alert("SyCoDex script loaded!");
 
 const types = [
     "Fire",
