@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>SyCoDex</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <title>SyCoDex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Welcome to SyCoDex!</h1>
+<h1>SyCoDex</h1>
 
-<p>If you're seeing this, it's working.</p>
+<p>Enter a trainer name to discover their Pokémon:</p>
+
+<input id="nameInput" placeholder="Enter name">
+
+<button onclick="generatePokemon()">Generate</button>
+
+
+<div id="pokemonCard">
+    <h2 id="pokemonName"></h2>
+
+    <p><b>Type:</b> <span id="pokemonType"></span></p>
+
+    <p><b>Height:</b> <span id="pokemonHeight"></span></p>
+
+    <p><b>Weight:</b> <span id="pokemonWeight"></span></p>
+
+    <p id="pokemonDescription"></p>
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
