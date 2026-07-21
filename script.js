@@ -1,5 +1,3 @@
-alert("SyCoDex script loaded!");
-
 const types = [
     "Fire",
     "Water",
