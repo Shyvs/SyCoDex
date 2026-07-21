@@ -20,12 +20,12 @@ const types = [
 ];
 
 
-const appearances = [
-    "A small creature with glowing markings and unusual features.",
-    "A mysterious SyCoMon with a unique body shape and strange abilities.",
-    "A fluffy creature covered in soft fur and colorful patterns.",
-    "A sleek SyCoMon with sharp features and an intimidating appearance.",
-    "A tiny SyCoMon that appears fragile but hides great strength."
+const sizes = [
+    "Tiny",
+    "Small",
+    "Medium",
+    "Large",
+    "Gigantic"
 ];
 
 
@@ -40,9 +40,8 @@ const bodyShapes = [
     "amphibious creature",
     "humanoid creature",
     "mechanical creature",
-
-    "small rodent-like creature",
-    "large bear-like creature",
+    "rodent-like creature",
+    "bear-like creature",
     "cat-like creature",
     "wolf-like creature",
     "deer-like creature",
@@ -51,7 +50,6 @@ const bodyShapes = [
     "frog-like creature",
     "moth-like creature",
     "butterfly-like creature",
-
     "bat-like creature",
     "dragon-like creature",
     "plant-like creature",
@@ -62,18 +60,16 @@ const bodyShapes = [
     "spider-like creature",
     "fish-like creature",
     "shark-like creature",
-
-    "tiny fairy-like creature",
+    "fairy-like creature",
     "armored creature",
-    "ancient beast",
     "ghostly apparition",
-    "living statue-like creature",
     "celestial creature",
     "shadowy creature",
     "cloud-like creature",
     "crystalline creature",
     "energy-based creature"
 ];
+
 
 const materials = [
     "soft fur",
@@ -86,9 +82,7 @@ const materials = [
     "rocky armor",
     "silky feathers",
     "gelatinous slime",
-
     "velvety fur",
-    "rough stone-like skin",
     "shimmering scales",
     "glass-like surfaces",
     "leaf-covered skin",
@@ -96,19 +90,10 @@ const materials = [
     "ceramic armor",
     "liquid-like body",
     "shadowy mist",
-    "woven fiber-like textures",
-
-    "glowing energy patterns",
-    "frost-covered surfaces",
-    "molten rock-like skin",
-    "porcelain-like features",
-    "metallic plating",
     "iridescent scales",
-    "cloud-like fluff",
-    "crystal-covered skin",
-    "feathered wings",
     "shell-like armor"
 ];
+
 
 const features = [
     "large expressive eyes",
@@ -121,7 +106,6 @@ const features = [
     "floating objects orbiting it",
     "sharp claws",
     "small wings",
-
     "multiple tails",
     "a large fluffy mane",
     "spiral horns",
@@ -132,29 +116,16 @@ const features = [
     "gemstone-like eyes",
     "long whiskers",
     "a unique crest on its head",
-
     "floating ribbons or tendrils",
-    "large protective shell",
-    "oversized paws",
+    "a protective shell",
     "needle-like spines",
-    "color-changing patterns",
     "transparent wings",
-    "a bell-like structure",
-    "rings around its body",
-    "a glowing tail tip",
-    "small floating companions",
-
     "mechanical components",
     "ancient symbols carved into its body",
-    "spiraling markings",
     "extra sets of eyes",
-    "a crown-like structure",
-    "natural armor plates",
-    "webbed limbs",
-    "long flowing ears",
-    "a curled tail",
     "a lantern-like organ"
 ];
+
 
 const colors = {
     warm: [
@@ -190,26 +161,6 @@ const colors = {
     ]
 };
 
-const colorModifiers = {
-
-    standard: [
-        ""
-    ],
-
-    brightness: [
-        "light",
-        "dark",
-        "bright",
-        "deep"
-    ],
-
-    saturation: [
-        "vibrant",
-        "muted",
-        "soft",
-        "pastel"
-    ]
-};
 
 function generateColor(seed) {
 
@@ -230,12 +181,12 @@ function generateColor(seed) {
         ];
 
 
-    let modifierPool;
+    let modifiers;
 
 
     if(colors.neutral.includes(color)) {
 
-        modifierPool = [
+        modifiers = [
             "",
             "dark",
             "light",
@@ -244,7 +195,7 @@ function generateColor(seed) {
 
     } else if(colors.soft.includes(color)) {
 
-        modifierPool = [
+        modifiers = [
             "",
             "pastel",
             "soft",
@@ -253,7 +204,7 @@ function generateColor(seed) {
 
     } else {
 
-        modifierPool = [
+        modifiers = [
             "",
             "light",
             "dark",
@@ -265,19 +216,16 @@ function generateColor(seed) {
 
 
     let modifier =
-        modifierPool[
+        modifiers[
             Math.floor(
-                seededRandom(seed + 1) * modifierPool.length
+                seededRandom(seed + 1) * modifiers.length
             )
         ];
 
 
-    if(modifier === "") {
-        return color;
-    }
-
-
-    return modifier + " " + color;
+    return modifier === ""
+        ? color
+        : modifier + " " + color;
 }
 
 
@@ -290,152 +238,60 @@ const details = [
     "Small sparks of energy dance around its body.",
     "Its eyes glow when it becomes excited.",
     "It leaves behind a trail of glowing footprints.",
-    "Its fur, scales, or surface shifts colors in different lighting.",
+    "Its surface shifts colors in different lighting.",
     "It creates a soft humming sound when nearby.",
     "Tiny plants grow wherever it rests.",
     "Small crystals grow naturally from its body.",
     "Its shadow moves slightly differently from its body.",
     "It collects shiny objects and treasures.",
-    "It hides small objects inside its body.",
     "Its markings resemble ancient symbols.",
-    "Its tail or ears move according to its emotions.",
     "It creates a faint mist around itself.",
-    "It changes its appearance when entering different environments.",
     "Its body reflects light like glass.",
-    "It is often surrounded by small floating particles.",
-    "Its footsteps leave unusual patterns behind.",
+    "It is surrounded by floating particles.",
     "It sleeps while floating slightly above the ground.",
-    "It wraps itself in its own tail when resting.",
-    "It communicates through unusual sounds or melodies.",
-    "Its horns, claws, or spikes glow at night.",
-    "Its body temperature changes depending on its mood.",
-    "It sheds pieces of its outer layer that become decorations.",
-    "It grows unique patterns as it ages.",
-    "Its colors become brighter when it is happy.",
-    "It can sense changes in its surroundings.",
-    "It is attracted to certain sounds or music.",
+    "It communicates through unusual sounds.",
+    "Its horns or claws glow at night.",
+    "Its colors become brighter when happy.",
     "It follows travelers but avoids being noticed.",
-    "It enjoys collecting things left behind by humans.",
     "It creates small nests from unusual materials.",
-    "It becomes nearly invisible when frightened.",
-    "It appears different when viewed from different angles.",
     "Its reflection behaves strangely.",
-    "It always carries a small natural object.",
-    "It is rarely seen without a group of smaller creatures nearby.",
-    "Its body contains a glowing core.",
-    "Its markings appear only under certain conditions.",
-    "It creates shapes or patterns when moving.",
-    "It leaves a pleasant scent behind.",
     "It mimics the movements of creatures around it."
 ];
 
+
 const personalities = [
-    "Curious and playful, it enjoys exploring new places.",
-    "Quiet and mysterious, it prefers to observe from a distance.",
-    "Friendly and loyal, it forms strong bonds with trainers.",
-    "Mischievous and clever, it enjoys surprising others.",
+    "Curious and playful.",
+    "Quiet and mysterious.",
+    "Friendly and loyal.",
+    "Mischievous and clever.",
     "Protective and brave.",
-    "Shy but curious",
-    "Playful and energetic",
-    "Calm and protective",
-    "Serious and independent",
-    "Gentle and nurturing"
+    "Shy but curious.",
+    "Playful and energetic.",
+    "Calm and protective.",
+    "Serious and independent.",
+    "Gentle and nurturing."
 ];
+
 
 const habitats = [
-    // Forest / Nature
     "Deep forests",
-    "Ancient forests",
-    "Moss-covered woods",
-    "Rainforests",
-    "Bamboo forests",
-    "Flower-filled meadows",
-    "Dense jungles",
-    "Foggy woodland",
-    "Giant tree canopies",
-    "Hidden forest clearings",
-    "Autumn forests",
-    "Frozen forests",
-
-    // Mountains / Caves
-    "Mountain peaks",
-    "Rocky cliffs",
-    "Volcanic regions",
+    "Ancient ruins",
     "Crystal caves",
-    "Underground caverns",
-    "Abandoned mines",
-    "Ice caves",
-    "Hot springs",
-    "Mountain temples",
-    "Deep underground tunnels",
-
-    // Water
-    "Deep oceans",
+    "Mountain peaks",
+    "Volcanic regions",
     "Coral reefs",
     "Coastal shores",
-    "Rocky beaches",
-    "Frozen seas",
-    "Underwater ruins",
-    "Rivers and streams",
-    "Swampy wetlands",
-    "Misty lakes",
-    "Waterfall valleys",
-
-    // Desert / Dry Areas
     "Deserts",
-    "Ancient deserts",
-    "Sand dunes",
-    "Oasis regions",
-    "Dry canyons",
-    "Rocky badlands",
-    "Salt flats",
-
-    // Urban / Human Areas
     "Abandoned cities",
-    "Quiet towns",
-    "Crowded cities",
-    "Rooftops",
-    "Industrial areas",
-    "Old train stations",
-    "Forgotten buildings",
-    "Human settlements",
-    "City parks",
-
-    // Magical / Mysterious
-    "Ancient ruins",
     "Forgotten temples",
-    "Haunted locations",
-    "Places with strong memories",
-    "Hidden valleys",
     "Magical forests",
-    "Areas with unusual weather",
-    "Places where legends are told",
-    "Sacred grounds",
-    "Forgotten battlefields",
-
-    // Sky / Space
-    "High mountain skies",
-    "Cloud-covered regions",
     "Floating islands",
-    "Stormy skies",
-    "Open grasslands",
-    "Night skies",
-    "Meteor impact sites",
-    "Astronomical observatories",
-
-    // Strange / Unique
     "Dream-like landscapes",
-    "Mirror-like dimensions",
-    "Glowing underground forests",
-    "Places where seasons change rapidly",
-    "Areas with strange energy",
-    "Locations where time feels unusual",
     "Hidden islands",
-    "Rarely visited wilderness"
+    "Glowing underground forests"
 ];
 
 
-// Convert name into a consistent seed
 function createSeed(name) {
 
     let seed = 0;
@@ -448,7 +304,6 @@ function createSeed(name) {
 }
 
 
-// Repeatable random generator
 function seededRandom(seed) {
 
     let x = Math.sin(seed) * 10000;
@@ -457,12 +312,10 @@ function seededRandom(seed) {
 }
 
 
-
 function generatesycomon() {
 
-    console.log("Generate button pressed");
-
-    let name = document
+    let name =
+        document
         .getElementById("nameInput")
         .value
         .trim();
@@ -476,55 +329,71 @@ function generatesycomon() {
 
     let type1 =
         types[Math.floor(
-            seededRandom(seed) * types.length
+            seededRandom(seed + 1) * types.length
         )];
 
 
     let type2 =
         types[Math.floor(
-            seededRandom(seed + 1) * types.length
+            seededRandom(seed + 2) * types.length
         )];
 
+
+    if(type1 === type2) {
+        type2 =
+        types[(types.indexOf(type1) + 1) % types.length];
+    }
+
+
+    let size =
+        sizes[Math.floor(
+            seededRandom(seed + 3) * sizes.length
+        )];
+
+
     let bodyShape =
-    bodyShapes[Math.floor(
-        seededRandom(seed + 3) * bodyShapes.length
-    )];
-
-let feature =
-    features[Math.floor(
-        seededRandom(seed + 4) * features.length
-    )];
-
-let material =
-    materials[Math.floor(
-        seededRandom(seed + 5) * materials.length
-    )];
-
-let primaryColor =
-    generateColor(seed + 6);
-
-let secondaryColor =
-    generateColor(seed + 7);
-
-let detail =
-    details[Math.floor(
-        seededRandom(seed + 8) * details.length
-    )];
+        bodyShapes[Math.floor(
+            seededRandom(seed + 4) * bodyShapes.length
+        )];
 
 
-let appearance =
-    `A ${bodyShape} with ${material}. It has ${feature}. Its main colors are ${primaryColor} and ${secondaryColor}. ${detail}`;
+    let material =
+        materials[Math.floor(
+            seededRandom(seed + 5) * materials.length
+        )];
+
+
+    let feature =
+        features[Math.floor(
+            seededRandom(seed + 6) * features.length
+        )];
+
+
+    let color1 = generateColor(seed + 7);
+    let color2 = generateColor(seed + 8);
+
+
+    let detail =
+        details[Math.floor(
+            seededRandom(seed + 9) * details.length
+        )];
+
+
+    let appearance =
+        `${size} ${bodyShape} with ${material}. It has ${feature}. Its main colors are ${color1} and ${color2}. ${detail}`;
+
 
     let personality =
         personalities[Math.floor(
-            seededRandom(seed + 4) * personalities.length
+            seededRandom(seed + 10) * personalities.length
         )];
 
 
     let habitat =
         habitats[Math.floor(
-            seededRandom(seed + 5) * habitats.length
+            seededRandom(seed + 11) * habitats.length
         )];
+
 
     document.getElementById("sycomonName").innerText = name;
 
