@@ -20,17 +20,6 @@ const types = [
 ];
 
 
-const categories = [
-    "The Forest SyCoMon",
-    "The Dream SyCoMon",
-    "The Shadow SyCoMon",
-    "The Ancient SyCoMon",
-    "The Spirit SyCoMon",
-    "The Guardian SyCoMon",
-    "The Mischief SyCoMon"
-];
-
-
 const appearances = [
     "A small creature with glowing markings and unusual features.",
     "A mysterious SyCoMon with a unique body shape and strange abilities.",
@@ -40,12 +29,189 @@ const appearances = [
 ];
 
 
+const bodyShapes = [
+    "fox-like creature",
+    "round and fluffy creature",
+    "long serpentine creature",
+    "insect-like creature",
+    "four-legged beast",
+    "floating creature",
+    "bird-like creature",
+    "amphibious creature",
+    "humanoid creature",
+    "mechanical creature"
+];
+
+const features = [
+    "large expressive eyes",
+    "glowing markings across its body",
+    "oversized ears",
+    "a long flowing tail",
+    "curved horns",
+    "crystal growths",
+    "leaf-like fins",
+    "floating objects orbiting it",
+    "sharp claws",
+    "small wings"
+];
+
+const materials = [
+    "soft fur",
+    "smooth scales",
+    "crystalline plates",
+    "wood-like bark",
+    "metal armor",
+    "mist-like energy",
+    "rubbery skin",
+    "rocky armor",
+    "silky feathers",
+    "gelatinous slime"
+];
+
+const colors = {
+    warm: [
+        "red",
+        "orange",
+        "yellow",
+        "gold"
+    ],
+
+    cool: [
+        "blue",
+        "teal",
+        "cyan",
+        "purple"
+    ],
+
+    natural: [
+        "green",
+        "brown",
+        "cream"
+    ],
+
+    neutral: [
+        "black",
+        "white",
+        "gray",
+        "silver"
+    ],
+
+    soft: [
+        "pink",
+        "lavender"
+    ]
+};
+
+const colorModifiers = {
+
+    standard: [
+        ""
+    ],
+
+    brightness: [
+        "light",
+        "dark",
+        "bright",
+        "deep"
+    ],
+
+    saturation: [
+        "vibrant",
+        "muted",
+        "soft",
+        "pastel"
+    ]
+};
+
+function generateColor(seed) {
+
+    let allColors = [
+        ...colors.warm,
+        ...colors.cool,
+        ...colors.natural,
+        ...colors.neutral,
+        ...colors.soft
+    ];
+
+
+    let color =
+        allColors[
+            Math.floor(
+                seededRandom(seed) * allColors.length
+            )
+        ];
+
+
+    let modifierPool;
+
+
+    if(colors.neutral.includes(color)) {
+
+        modifierPool = [
+            "",
+            "dark",
+            "light",
+            "metallic"
+        ];
+
+    } else if(colors.soft.includes(color)) {
+
+        modifierPool = [
+            "",
+            "pastel",
+            "soft",
+            "vibrant"
+        ];
+
+    } else {
+
+        modifierPool = [
+            "",
+            "light",
+            "dark",
+            "vibrant",
+            "muted",
+            "deep"
+        ];
+    }
+
+
+    let modifier =
+        modifierPool[
+            Math.floor(
+                seededRandom(seed + 1) * modifierPool.length
+            )
+        ];
+
+
+    if(modifier === "") {
+        return color;
+    }
+
+
+    return modifier + " " + color;
+}
+
+
+const details = [
+    "Its body glows faintly in darkness.",
+    "It leaves behind traces of energy as it moves.",
+    "Its markings change depending on its mood.",
+    "It carries objects it finds interesting.",
+    "Its appearance changes slightly with the seasons."
+];
+
 const personalities = [
     "Curious and playful, it enjoys exploring new places.",
     "Quiet and mysterious, it prefers to observe from a distance.",
     "Friendly and loyal, it forms strong bonds with trainers.",
     "Mischievous and clever, it enjoys surprising others.",
-    "Protective and brave, it watches over its territory."
+    "Protective and brave.",
+    "Shy but curious",
+    "Playful and energetic",
+    "Calm and protective",
+    "Serious and independent",
+    "Gentle and nurturing"
 ];
 
 
@@ -118,18 +284,35 @@ function generatesycomon() {
             seededRandom(seed + 1) * types.length
         )];
 
+    let bodyShape =
+    bodyShapes[Math.floor(
+        seededRandom(seed + 3) * bodyShapes.length
+    )];
 
-    let category =
-        categories[Math.floor(
-            seededRandom(seed + 2) * categories.length
-        )];
+let feature =
+    features[Math.floor(
+        seededRandom(seed + 4) * features.length
+    )];
+
+let material =
+    materials[Math.floor(
+        seededRandom(seed + 5) * materials.length
+    )];
+
+let primaryColor =
+    generateColor(seed + 6);
+
+let secondaryColor =
+    generateColor(seed + 7);
+
+let detail =
+    details[Math.floor(
+        seededRandom(seed + 8) * details.length
+    )];
 
 
-    let appearance =
-        appearances[Math.floor(
-            seededRandom(seed + 3) * appearances.length
-        )];
-
+let appearance =
+    `A ${bodyShape} with ${material}. It has ${feature}. Its main colors are ${primaryColor} and ${secondaryColor}. ${detail}`;
 
     let personality =
         personalities[Math.floor(
@@ -148,15 +331,10 @@ function generatesycomon() {
             seededRandom(seed + 6) * entries.length
         )];
 
-
-
     document.getElementById("sycomonName").innerText = name;
 
     document.getElementById("sycomonType").innerText =
         type1 + " / " + type2;
-
-    document.getElementById("sycomonCategory").innerText =
-        category;
 
     document.getElementById("sycomonAppearance").innerText =
         appearance;
