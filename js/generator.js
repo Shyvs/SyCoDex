@@ -15,8 +15,26 @@ function generateSyCoMon(name) {
     let shapeResult = pickTrait(shapes, sycomonTypes, seed + 2);
     let materialResult = pickTrait(materials, sycomonTypes, seed + 3);
     let featureResult = pickTrait(features, sycomonTypes, seed + 4);
-    let detailResult = pickTrait(details, sycomonTypes, seed + 5);
+  let legendary = checkLegendary(seed + 50);
 
+
+let detailResult;
+
+
+if(legendary) {
+
+    detailResult = {
+        trait: {
+            name: pickFromList(rareDetails, seed + 5)
+        },
+        match: 1
+    };
+
+} else {
+
+    detailResult = pickTrait(details, sycomonTypes, seed + 5);
+
+}
 
     // Generate flavor
     let color1 = pickFromList(colors, seed + 6);
@@ -35,8 +53,18 @@ function generateSyCoMon(name) {
         detailResult.match;
 
 
-    let rarity = calculateRarity(rarityScore);
+  let rarity;
 
+
+if(legendary) {
+
+    rarity = "Legendary";
+
+} else {
+
+    rarity = calculateRarity(rarityScore);
+
+}
 
     // Build appearance description
     let appearance =
@@ -46,20 +74,21 @@ function generateSyCoMon(name) {
         ${detailResult.trait.name}`;
 
 
-    return {
+return {
 
-        name: name,
+    name: name,
 
-        types: sycomonTypes,
+    types: sycomonTypes,
 
-        rarity: rarity,
+    rarity: rarity,
 
-        appearance: appearance,
+    legendary: legendary,
 
-        habitat: habitat,
+    appearance: appearance,
 
-        personality: personality
+    habitat: habitat,
 
-    };
+    personality: personality
 
+};
 }
