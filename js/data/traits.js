@@ -1,14 +1,73 @@
 const shapes = [
-    "fox-like creature",
-    "round and fluffy creature",
-    "long serpentine creature",
-    "insect-like creature",
-    "four-legged beast",
-    "floating creature",
-    "bird-like creature",
-    "amphibious creature",
-    "humanoid creature",
-    "mechanical creature",
+  {
+        name: "fox-like creature",
+        types: ["Fire", "Fairy", "Dark", "Normal"]
+    },
+
+    {
+        name: "round and fluffy creature",
+        types: ["Normal", "Fairy", "Ice"]
+    },
+
+    {
+        name: "long serpentine creature",
+        types: ["Dragon", "Water", "Poison"]
+    },
+
+ {
+        name: "insect-like creature",
+        types: ["Bug", "Poison", "Grass"]
+    },
+
+    {
+        name: "four-legged beast",
+        types: ["Normal", "Ground", "Fighting"]
+    },
+
+    {
+        name: "floating creature",
+        types: ["Ghost", "Psychic", "Flying"]
+    },
+
+    {
+        name: "bird-like creature",
+        types: ["Flying", "Normal", "Electric"]
+    },
+
+    {
+        name: "amphibious creature",
+        types: ["Water", "Poison", "Grass"]
+    },
+
+    {
+        name: "humanoid creature",
+        types: ["Psychic", "Fighting", "Fairy"]
+    },
+
+    {
+        name: "mechanical creature",
+        types: ["Steel", "Electric"]
+    },
+ {
+        name: "mushroom-like creature",
+        types: ["Grass", "Poison", "Fairy"]
+    },
+
+    {
+        name: "crystalline creature",
+        types: ["Rock", "Ice", "Fairy"]
+    },
+
+    {
+        name: "shadowy creature",
+        types: ["Dark", "Ghost"]
+    },
+
+    {
+        name: "celestial creature",
+        types: ["Psychic", "Fairy", "Dragon"]
+    }
+
     "rodent-like creature",
     "bear-like creature",
     "cat-like creature",
@@ -22,7 +81,7 @@ const shapes = [
     "bat-like creature",
     "dragon-like creature",
     "plant-like creature",
-    "mushroom-like creature",
+   
     "blob-like creature",
     "jelly-like creature",
     "crab-like creature",
@@ -32,10 +91,10 @@ const shapes = [
     "fairy-like creature",
     "armored creature",
     "ghostly apparition",
-    "celestial creature",
-    "shadowy creature",
+
+
     "cloud-like creature",
-    "crystalline creature",
+
     "energy-based creature"
 ];
 
