@@ -11,3 +11,81 @@ body {
     padding: 20px;
     border-radius: 15px;
 }
+
+.type {
+    display: inline-block;
+    color: white;
+    padding: 4px 12px;
+    margin: 2px;
+    border-radius: 999px;
+    font-weight: bold;
+    min-width: 70px;
+}
+
+.fire { background:#EE8130; }
+
+.water { background:#6390F0; }
+
+.grass { background:#7AC74C; }
+
+.electric { background:#F7D02C; color:black; }
+
+.ice { background:#96D9D6; color:black; }
+
+.fighting { background:#C22E28; }
+
+.poison { background:#A33EA1; }
+
+.ground { background:#E2BF65; color:black; }
+
+.flying { background:#A98FF3; }
+
+.psychic { background:#F95587; }
+
+.bug { background:#A6B91A; }
+
+.rock { background:#B6A136; }
+
+.ghost { background:#735797; }
+
+.dragon { background:#6F35FC; }
+
+.dark { background:#705746; }
+
+.steel { background:#B7B7CE; color:black; }
+
+.fairy { background:#D685AD; }
+
+.normal { background:#A8A77A; color:black; }
+
+
+.rarity {
+
+    display:inline-block;
+
+    padding:6px 16px;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.common {
+    background:#555;
+}
+
+.uncommon {
+    background:#2e8b57;
+}
+
+.rare {
+    background:#4169e1;
+}
+
+.legendary {
+    background:#8b0000;
+}
+
