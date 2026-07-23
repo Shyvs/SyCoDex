@@ -33,7 +33,9 @@ function generate() {
 
     document.getElementById("sycomonAppearance").innerText =
         sycomon.appearance;
-
+    
+    document.getElementById("sycomonColors").innerText =
+        sycomon.colors;
 
     document.getElementById("sycomonPersonality").innerText =
         sycomon.personality;
