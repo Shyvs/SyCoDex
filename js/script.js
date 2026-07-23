@@ -1,25 +1,3 @@
-const types = [
-    "Fire",
-    "Water",
-    "Grass",
-    "Electric",
-    "Ice",
-    "Fighting",
-    "Poison",
-    "Ground",
-    "Flying",
-    "Psychic",
-    "Bug",
-    "Rock",
-    "Ghost",
-    "Dragon",
-    "Dark",
-    "Steel",
-    "Fairy",
-    "Normal"
-];
-
-
 const sizes = [
     "Tiny",
     "Small",
@@ -270,25 +248,6 @@ const personalities = [
     "Calm and protective.",
     "Serious and independent.",
     "Gentle and nurturing."
-];
-
-
-const habitats = [
-    "Deep forests",
-    "Ancient ruins",
-    "Crystal caves",
-    "Mountain peaks",
-    "Volcanic regions",
-    "Coral reefs",
-    "Coastal shores",
-    "Deserts",
-    "Abandoned cities",
-    "Forgotten temples",
-    "Magical forests",
-    "Floating islands",
-    "Dream-like landscapes",
-    "Hidden islands",
-    "Glowing underground forests"
 ];
 
 
