@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>SyCoDex</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
 <h1>SyCoDex</h1>
 
-<p>Enter a name to discover SyCoMon:</p>
+<p>Enter a name to discover a SyCoMon:</p>
+
 
 <input id="nameInput" placeholder="Enter name">
 
-<button onclick="generatesycomon()">Generate</button>
+<button onclick="generate()">Generate</button>
+
 
 
 <div id="sycomonCard">
 
     <h2 id="sycomonName"></h2>
 
-    <p><b>Type:</b> <span id="sycomonType"></span></p>
 
-    <p><b>Appearance:</b> <span id="sycomonAppearance"></span></p>
+    <p>
+        <b>Type:</b>
+        <span id="sycomonType"></span>
+    </p>
 
-    <p><b>Personality:</b> <span id="sycomonPersonality"></span></p>
 
-    <p><b>Habitat:</b> <span id="sycomonHabitat"></span></p>
+    <p>
+        <b>Rarity:</b>
+        <span id="sycomonRarity"></span>
+    </p>
+
+
+    <p>
+        <b>Appearance:</b>
+        <span id="sycomonAppearance"></span>
+    </p>
+
+
+    <p>
+        <b>Personality:</b>
+        <span id="sycomonPersonality"></span>
+    </p>
+
+
+    <p>
+        <b>Habitat:</b>
+        <span id="sycomonHabitat"></span>
+    </p>
+
 
 </div>
 
+
+
+<!-- Data files first -->
 <script src="js/data/types.js"></script>
+<script src="js/data/traits.js"></script>
+<script src="js/data/flavor.js"></script>
+
+
+<!-- Utility files -->
 <script src="js/random.js"></script>
+<script src="js/rarity.js"></script>
+
+
+<!-- Generator last -->
+<script src="js/generator.js"></script>
+
+
+<!-- Website controls -->
 <script src="js/script.js"></script>
 
+
 </body>
+
 </html>
