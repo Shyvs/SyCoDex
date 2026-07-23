@@ -130,41 +130,42 @@ function generateSyCoMon(name) {
         );
 
 
-    // ==========================
-    // Colors
-    // ==========================
+ // ==========================
+// Colors
+// ==========================
 
-    let palette =
-        generatePalette(seed + 20);
-
-
-    let colorText =
-        `Its primary colors are ${palette.primary} and ${palette.secondary}.`;
+let palette =
+    generatePalette(seed + 20);
 
 
-    if (palette.accent !== null) {
-
-        let accentPhrases = [
-
-            `with an accent of ${palette.accent}`,
-
-            `with touches of ${palette.accent}`,
-
-            `accented by ${palette.accent}`
-
-        ];
+let colorDescription =
+    `${palette.primary} and ${palette.secondary}`;
 
 
-        let accentText =
-            pickFromList(
-                accentPhrases,
-                seed + 21
-            );
+if (palette.accent !== null) {
+
+    let accentPhrases = [
+
+        `with an accent of ${palette.accent}`,
+
+        `with touches of ${palette.accent}`,
+
+        `accented by ${palette.accent}`
+
+    ];
 
 
-        colorText =
-            `Its primary colors are ${palette.primary} and ${palette.secondary}, ${accentText}.`;
-    }
+    let accentText =
+        pickFromList(
+            accentPhrases,
+            seed + 21
+        );
+
+
+    colorDescription +=
+        `, ${accentText}`;
+
+}
 
 
     // ==========================
