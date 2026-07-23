@@ -41,8 +41,14 @@ sycomon.types.forEach(type => {
 
 });
 
-    document.getElementById("sycomonRarity").innerText =
-        sycomon.rarity;
+const rarity =
+    document.getElementById("sycomonRarity");
+
+rarity.className =
+    `rarity ${sycomon.rarity.toLowerCase()}`;
+
+rarity.textContent =
+    sycomon.rarity;
 
 
     document.getElementById("sycomonAppearance").innerText =
