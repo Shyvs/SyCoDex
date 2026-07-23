@@ -3,13 +3,27 @@ function generateSyCoMon(name) {
     let seed = createSeed(name.toLowerCase());
 
 
-    // Generate typing
-    let type1 = pickFromList(types, seed);
-    let type2 = pickFromList(types, seed + 1);
+   // Generate typing
+
+let type1 = pickFromList(types, seed);
+
+let sycomonTypes = [type1];
 
 
-    let sycomonTypes = [type1, type2];
+// 60% chance to become dual type
+if (seededRandom(seed + 100) < 0.60) {
 
+    let type2;
+
+    do {
+
+        type2 = pickFromList(types, seed + 1);
+
+    } while (type2 === type1);
+
+    sycomonTypes.push(type2);
+
+}
 
     // Generate influenced traits
     let shapeResult = pickTrait(shapes, sycomonTypes, seed + 2);
