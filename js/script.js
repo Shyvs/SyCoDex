@@ -23,9 +23,23 @@ function generate() {
         sycomon.name;
 
 
-    document.getElementById("sycomonType").innerText =
-        sycomon.types.join(" / ");
+const typeContainer =
+    document.getElementById("sycomonType");
 
+typeContainer.innerHTML = "";
+
+sycomon.types.forEach(type => {
+
+    const badge =
+        document.createElement("span");
+
+    badge.className = `type ${type.toLowerCase()}`;
+
+    badge.textContent = type;
+
+    typeContainer.appendChild(badge);
+
+});
 
     document.getElementById("sycomonRarity").innerText =
         sycomon.rarity;
