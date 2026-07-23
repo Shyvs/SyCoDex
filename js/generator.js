@@ -200,16 +200,10 @@ if (palette.accent !== null) {
     // Appearance
     // ==========================
 
-    let appearance =
-
-        `A ${size} ${shapeResult.trait.name} with ${materialResult.trait.name}. ` +
-
-        `It has ${featureResult.trait.name}. ` +
-
-        `${colorText} ` +
-
-        `${detailResult.trait.name}`;
-
+  let appearance =
+    `A ${size} ${shapeResult.trait.name} with ${materialResult.trait.name}. ` +
+    `It has ${featureResult.trait.name}. ` +
+    `${detailResult.trait.name}`;
 
     // ==========================
     // Return
@@ -226,6 +220,8 @@ if (palette.accent !== null) {
         legendary: legendary,
 
         appearance: appearance,
+
+        colors: colorDescription,
 
         habitat: habitat,
 
