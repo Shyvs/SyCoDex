@@ -41,106 +41,121 @@ const personalities = [
 ];
 
 
-const colors = {
-    warm: [
-        "red",
-        "orange",
-        "yellow",
-        "gold"
-    ],
+const colors = [
 
-    cool: [
-        "blue",
-        "teal",
-        "cyan",
-        "purple"
-    ],
+    {
+        name: "red",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
 
-    natural: [
-        "green",
-        "brown",
-        "cream"
-    ],
+    {
+        name: "orange",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
 
-    neutral: [
-        "black",
-        "white",
-        "gray",
-        "silver"
-    ],
+    {
+        name: "yellow",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
 
-    soft: [
-        "pink",
-        "lavender"
-    ]
-};
+    {
+        name: "green",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
+
+    {
+        name: "blue",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
+
+    {
+        name: "purple",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
+
+    {
+        name: "pink",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
+
+    {
+        name: "brown",
+        modifiers: ["", "light", "dark", "vibrant", "muted"]
+    },
+
+    {
+        name: "gray",
+        modifiers: ["", "light", "dark"]
+    },
+
+    {
+        name: "black",
+        modifiers: [""]
+    },
+
+    {
+        name: "white",
+        modifiers: [""]
+    },
+
+    {
+        name: "silver",
+        modifiers: [""]
+    },
+
+    {
+        name: "gold",
+        modifiers: [""]
+    },
+
+    {
+        name: "bronze",
+        modifiers: [""]
+    }
+
+];
 
 
-function generateColor(seed) {
+function generatePalette(seed) {
 
-    let allColors = [
-        ...colors.warm,
-        ...colors.cool,
-        ...colors.natural,
-        ...colors.neutral,
-        ...colors.soft
-    ];
+    let primary = generateColor(seed);
 
+    let secondary;
 
-    let color =
-        allColors[
-            Math.floor(
-                seededRandom(seed) * allColors.length
-            )
-        ];
+    do {
+
+        secondary = generateColor(seed + 10);
+
+    } while (secondary === primary);
 
 
-    let modifiers;
+    let accent = null;
 
 
-    if(colors.neutral.includes(color)) {
+    if (seededRandom(seed + 20) < 0.30) {
 
-        modifiers = [
-            "",
-            "dark",
-            "light",
-            "metallic"
-        ];
+        do {
 
-    } else if(colors.soft.includes(color)) {
+            accent = generateColor(seed + 30);
 
-        modifiers = [
-            "",
-            "pastel",
-            "soft",
-            "vibrant"
-        ];
+        } while (
 
-    } else {
+            accent === primary ||
+            accent === secondary
 
-        modifiers = [
-            "",
-            "light",
-            "dark",
-            "vibrant",
-            "muted",
-            "deep"
-        ];
+        );
+
     }
 
 
-    let modifier =
-        modifiers[
-            Math.floor(
-                seededRandom(seed + 1) * modifiers.length
-            )
-        ];
+    return {
 
+        primary: primary,
 
-    return modifier === ""
-        ? color
-        : modifier + " " + color;
+        secondary: secondary,
+
+        accent: accent
+
+    };
+
 }
-
-
-
