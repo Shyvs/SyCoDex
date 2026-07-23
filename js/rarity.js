@@ -18,3 +18,14 @@ function calculateRarity(score) {
     return "Rare";
 
 }
+
+function checkLegendary(seed) {
+
+    let roll = Math.floor(
+        seededRandom(seed) * 100
+    );
+
+
+    return roll === 0;
+
+}
