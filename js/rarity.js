@@ -1,19 +1,16 @@
 function calculateRarity(score) {
 
-
-    if(score === 4) {
+    if (score >= 3) {
 
         return "Common";
 
     }
 
-
-    if(score >= 2) {
+    if (score >= 2) {
 
         return "Uncommon";
 
     }
-
 
     return "Rare";
 
