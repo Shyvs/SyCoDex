@@ -16,12 +16,13 @@ function generate() {
     let sycomon = generateSyCoMon(name);
 
 
-
     // Display results
 
     document.getElementById("sycomonName").innerText =
         sycomon.name;
 
+}
+    
 function logSighting() {
 
 
