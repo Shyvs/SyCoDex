@@ -126,46 +126,61 @@ function generateColor(seed) {
             seed + 1
         );
 
-
     if (modifier === "") {
-
         return color.name;
-
     }
-
 
     return modifier + " " + color.name;
 
 }
 
+
 function generatePalette(seed) {
 
-    let primary = generateColor(seed);
+    let primary =
+        generateColor(seed);
 
-    let secondary;
+    // Find a different secondary color
+    let secondary = primary;
 
-    do {
+    for (let i = 1; i < 20; i++) {
 
-        secondary = generateColor(seed + 10);
+        secondary =
+            generateColor(seed + 10 + i);
 
-    } while (secondary === primary);
+        if (secondary !== primary) {
+            break;
+        }
+
+    }
 
 
     let accent = null;
 
-
     if (seededRandom(seed + 20) < 0.30) {
 
-        do {
+        for (let i = 1; i < 20; i++) {
 
-            accent = generateColor(seed + 30);
+            accent =
+                generateColor(seed + 30 + i);
 
-        } while (
+            if (
+                accent !== primary &&
+                accent !== secondary
+            ) {
+                break;
+            }
 
+        }
+
+        // If we somehow never found a unique accent,
+        // just don't use one.
+        if (
             accent === primary ||
             accent === secondary
-
-        );
+        ) {
+            accent = null;
+        }
 
     }
 
