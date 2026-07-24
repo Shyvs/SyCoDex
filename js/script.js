@@ -9,7 +9,7 @@ function generate() {
     // Don't generate if the input is empty
     if (name === "") {
         return;
-    }
+}
 
 
     // Create the SyCoMon
