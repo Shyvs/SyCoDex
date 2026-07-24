@@ -139,7 +139,7 @@ let palette =
 
 
 let colorDescription =
-    `${palette.primary} and ${palette.secondary}`;
+    `${palette.primary.charAt(0).toUpperCase() + palette.primary.slice(1)} and ${palette.secondary}`;
 
 
 if (palette.accent !== null) {
