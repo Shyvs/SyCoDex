@@ -31,6 +31,7 @@ function pickFromList(list, seed) {
 }
 
 function pickDifferent(generator, startSeed, forbidden, maxAttempts = 20)
+}
 
 function pickTrait(list, types, seed) {
 
