@@ -22,7 +22,36 @@ function generate() {
     document.getElementById("sycomonName").innerText =
         sycomon.name;
 
+function logSighting() {
 
+
+    let discoverer =
+        prompt("Enter your name for discovery records:");
+
+
+
+    if(discoverer === null || discoverer.trim() === "") {
+
+        return;
+
+    }
+
+
+    document.getElementById("sycomonDiscovery").innerText =
+        "Discovered by " + discoverer;
+
+
+
+    document.getElementById("discoveredSection").style.display =
+        "block";
+
+
+    window.currentSyCoMon.discoveredBy =
+        discoverer;
+
+}
+
+    
 const typeContainer =
     document.getElementById("sycomonType");
 
@@ -60,8 +89,14 @@ rarity.textContent =
     document.getElementById("sycomonPersonality").innerText =
         sycomon.personality;
 
-
     document.getElementById("sycomonHabitat").innerText =
         sycomon.habitat;
+
+    document.getElementById("logButton").style.display =
+    "inline-block";
+
+window.currentSyCoMon = sycomon;
+
+    
 
 }
