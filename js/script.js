@@ -21,22 +21,6 @@ function generate() {
     document.getElementById("sycomonName").innerText =
         sycomon.name;
 
-}
-    
-function logSighting() {
-
-
-    let discoverer =
-        prompt("Enter your name for discovery records:");
-
-
-
-    if(discoverer === null || discoverer.trim() === "") {
-
-        return;
-
-    }
-
 
     document.getElementById("sycomonDiscovery").innerText =
         "Discovered by " + discoverer;
@@ -50,6 +34,19 @@ function logSighting() {
     window.currentSyCoMon.discoveredBy =
         discoverer;
 
+}
+    
+function logSighting() {
+
+
+    let discoverer =
+        prompt("Enter your name for discovery records:");
+
+
+
+    if(discoverer === null || discoverer.trim() === "") {
+
+        return;
 }
 
     
