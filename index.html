@@ -16,8 +16,11 @@
 
 <input id="nameInput" placeholder="Enter name">
 
-<button onclick="generate()">Generate</button>
+<button id="searchButton" onclick="generate()">Search!</button>
 
+<button id="logButton" onclick="logSighting()" style="display:none;">
+    Log Sighting!
+</button>
 
 
 <div id="sycomonCard">
@@ -25,39 +28,46 @@
     <h2 id="sycomonName"></h2>
 
 
-    <p>
-        <b>Type:</b><br>
-        <span id="sycomonType"></span>
-    </p>
+    <div class="section">
+        <b>Type</b>
+        <div id="sycomonType"></div>
+    </div>
 
 
-    <p>
-        <b>Rarity:</b><br>
-        <span id="sycomonRarity"></span>
-    </p>
+    <div class="section">
+        <b>Rarity</b>
+        <div id="sycomonRarity"></div>
+    </div>
 
 
-    <p>
-    <b>Appearance:</b><br>
-    <span id="sycomonAppearance"></span>
-</p>
-
-<p>
-    <b>Colors:</b><br>
-    <span id="sycomonColors"></span>
-</p>
+    <div class="section">
+        <b>Appearance</b>
+        <p id="sycomonAppearance"></p>
+    </div>
 
 
-    <p>
-        <b>Personality:</b>
-        <span id="sycomonPersonality"></span>
-    </p>
+    <div class="section">
+        <b>Colors</b>
+        <p id="sycomonColors"></p>
+    </div>
 
 
-    <p>
-        <b>Habitat:</b>
-        <span id="sycomonHabitat"></span>
-    </p>
+    <div class="section">
+        <b>Personality</b>
+        <p id="sycomonPersonality"></p>
+    </div>
+
+
+    <div class="section">
+        <b>Habitat</b>
+        <p id="sycomonHabitat"></p>
+    </div>
+
+
+    <div class="section" id="discoveredSection" style="display:none;">
+        <b>Discovery</b>
+        <p id="sycomonDiscovery"></p>
+    </div>
 
 
 </div>
