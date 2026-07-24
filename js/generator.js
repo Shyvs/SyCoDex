@@ -3,31 +3,40 @@ function generateSyCoMon(name) {
     let seed = createSeed(name.toLowerCase());
 
 
-    // ==========================
-    // Typing
-    // ==========================
+  // ==========================
+// Typing
+// ==========================
 
-    let type1 = pickFromList(types, seed);
+let type1 =
+    pickFromList(types, seed);
 
-    let sycomonTypes = [type1];
+let sycomonTypes = [type1];
 
 
-    // 60% chance for dual typing
-    if (seededRandom(seed + 100) < 0.60) {
+// 60% chance for dual typing
+if (seededRandom(seed + 100) < 0.60) {
 
-        let type2;
+    let type2 = type1;
 
-        do {
+    for (let i = 1; i <= types.length; i++) {
 
-            type2 = pickFromList(
-                types,
-                seed + 137
-            );
+        type2 = pickFromList(
+            types,
+            seed + 137 + i
+        );
 
-        } while (type2 === type1);
+        if (type2 !== type1) {
+            break;
+        }
 
+    }
+
+    // Only add it if it's different
+    if (type2 !== type1) {
         sycomonTypes.push(type2);
     }
+
+}
 
 
     // ==========================
