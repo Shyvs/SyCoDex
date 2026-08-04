@@ -243,11 +243,85 @@ if (palette.accent !== null) {
 //               Appearance
 // ----------------------------------------
 
-let appearance =
-    `A ${size.toLowerCase()} ${bodyDescription} with ${materialResult.trait.name}. ` +
-    `It has ${featureResult.trait.name}. ` +
-    `${detailResult.trait.name}`;
+let material1 =
+    materialResult.trait.name;
 
+let material2 = null;
+
+
+// 35% chance for a second material
+if (seededRandom(seed + 400) < 0.35) {
+
+    for (let i = 1; i <= materials.length; i++) {
+
+        let candidate =
+            pickTrait(
+                materials,
+                sycomonTypes,
+                seed + 400 + i
+            ).trait;
+
+        if (candidate.name !== material1) {
+
+            material2 = candidate.name;
+            break;
+
+        }
+
+    }
+
+}
+
+
+let appearanceTemplates = [
+
+    `A ${size.toLowerCase()} ${bodyDescription} covered in ${material1}.`,
+
+    `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} covering its body.`,
+
+    `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} all over its body.`,
+
+    `A ${size.toLowerCase()} ${bodyDescription} with ${material1} all over it.`,
+
+    `A ${size.toLowerCase()} ${bodyDescription} patterned with ${material1}.`,
+
+];
+
+
+if (material2 !== null) {
+
+    appearanceTemplates.push(
+
+        `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} along its back and ${material2} on its head.`,
+
+        `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} covering its body and ${material2} on its arms.`,
+
+        `A ${size.toLowerCase()} ${bodyDescription} with ${material1} and ${material2}.`
+
+        `A ${size.toLowerCase()} ${bodyDescription} covered in mostly ${material1} with some ${material2}.`        
+
+        `A ${size.toLowerCase()} ${bodyDescription} covered in a blend of ${material1} and ${material2}.`,
+        
+        `A ${size.toLowerCase()} ${bodyDescription} covered in patterns of ${material1} and ${material2}.`,
+        
+    );
+
+}
+
+
+let appearance =
+    pickFromList(
+        appearanceTemplates,
+        seed + 500
+    );
+
+
+// Add feature and detail after
+appearance +=
+    ` It has ${featureResult.trait.name}.`;
+
+appearance +=
+    ` ${detailResult.trait.name}`;
 // ----------------------------------------
 //                  Return
 // ----------------------------------------
