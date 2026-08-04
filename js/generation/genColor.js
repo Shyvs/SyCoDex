@@ -13,9 +13,6 @@ function generateColors(types, seed) {
         colors:
             paletteResult.trait.colors,
 
-        rarityScore:
-            paletteResult.match
-
     };
 
 }
