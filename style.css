@@ -236,9 +236,19 @@ button:hover {
 
     width:65%;
 
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
 }
 
 .infoBox {
+
+    width:100%;
 
     background:
 
@@ -479,9 +489,11 @@ button:hover {
 ------------------------ */
 
 #sycomonColors {
-    display: flex;
-    gap: 8px;
-    margin: 10px 0;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:10px 0;
+
 }
 
 .color-swatch {
@@ -498,18 +510,30 @@ MOBILE FRIENDLY SHENANIGANS
 
 @media(max-width:800px) {
 
-
     #sycomonCard {
 
         flex-direction:column;
-
     }
-
 
     .leftColumn,
     .rightColumn {
 
         width:100%;
+    }
+
+    .imageBox {
+
+        width:250px;
+
+        height:250px;
+
+        font-size:70px;
+
+    }
+
+    .infoBox {
+
+        padding:15px;
 
     }
 
