@@ -1,21 +1,16 @@
 const materials = [
 
 {
-    name: "soft fur",
+    name: "soft short fur",
     types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Water", "Ice", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock", "Steel", "Bug"]
     // All types can have soft fur as relevant - because fuck it!
 },
+    
 {
     name: "fluffy long fur",
     types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Ice", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock"]
     // All except: steel, bug, water
 },
-    
-{
-    name: "short fur",
-    types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Water", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock", "Steel"]
-    // All except ice, steel, bug
-},  
     
 {
     name: "smooth scales",
