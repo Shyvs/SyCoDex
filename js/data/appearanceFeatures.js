@@ -1,6 +1,6 @@
 // Features should all be appearance related.
 
-const features = [
+const appearanceFeatures = [
 
     {
         name: "large expressive eyes",
