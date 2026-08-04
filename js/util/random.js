@@ -73,8 +73,6 @@ function pickUniqueTraits(list, types, seed, count) {
 
 }
 
-}
-
 function pickUniqueFromList(list, seed, count) {
 
     let results = [];
