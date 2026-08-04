@@ -1,155 +1,39 @@
-function generateAppearance(sycomonTypes, seed) {
+function generateAppearance(types, legendary, seed) {
 
-    // ----------------------------------------
-    //                Species
-    // ----------------------------------------
+// ----------------------------------------
+//         Pick appearance traits
+// ----------------------------------------
 
-    let speciesResult = pickTrait(
-        appearanceSpecies,
-        sycomonTypes,
-        seed + 1
-    );
+    let species =
+        pickUniqueTraits(
+            appearanceSpecies,
+            types,
+            seed + 1,
+            2
+        );
 
-
-    let speciesDescription =
-        speciesResult.trait.name;
-
-
-    // Chance for secondary species
-    if (seededRandom(seed + 50) < 0.40) {
-
-        let secondSpecies = null;
-
-        for (let i = 1; i <= appearanceSpecies.length; i++) {
-
-            let candidate =
-                pickTrait(
-                    appearanceSpecies,
-                    sycomonTypes,
-                    seed + 50 + i
-                ).trait;
-
-
-            if (candidate.name !== speciesDescription) {
-
-                secondSpecies = candidate.name;
-                break;
-
-            }
-
-        }
-
-
-        if (secondSpecies !== null) {
-
-            speciesDescription +=
-                " " + secondSpecies;
-
-        }
-
-    }
-
-
-
-    // ----------------------------------------
-    //                Surfaces
-    // ----------------------------------------
-
-    let surface1 =
-        pickTrait(
+    let surfaces =
+        pickUniqueTraits(
             appearanceSurfaces,
-            sycomonTypes,
-            seed + 2
+            types,
+            seed + 2,
+            3
         );
 
-
-    let surfaces = [
-        surface1.trait.name
-    ];
-
-
-    // Chance for second surface
-    if (seededRandom(seed + 100) < 0.40) {
-
-        for (let i = 1; i <= appearanceSurfaces.length; i++) {
-
-            let candidate =
-                pickTrait(
-                    appearanceSurfaces,
-                    sycomonTypes,
-                    seed + 100 + i
-                ).trait;
-
-
-            if (
-                candidate.name !== surfaces[0]
-            ) {
-
-                surfaces.push(candidate.name);
-                break;
-
-            }
-
-        }
-
-    }
-
-
-
-    // ----------------------------------------
-    //                Features
-    // ----------------------------------------
-
-    let featureResult =
-        pickTrait(
+    let features =
+        pickUniqueTraits(
             appearanceFeatures,
-            sycomonTypes,
-            seed + 3
+            types,
+            seed + 3,
+            2
         );
 
-
-
-    // ----------------------------------------
-    //            Appearance Detail
-    // ----------------------------------------
-
-    let detailResult;
-
-
-    if (seededRandom(seed + 200) < 0.20) {
-
-        detailResult = {
-            trait:
-                pickTrait(
-                    rareAppearanceDetails,
-                    sycomonTypes,
-                    seed + 4
-                ).trait,
-
-            rare: true
-        };
-
-
-    } else {
-
-        detailResult = {
-            trait:
-                pickTrait(
-                    appearanceDetails,
-                    sycomonTypes,
-                    seed + 4
-                ).trait,
-
-            rare: false
-        };
-
-    }
-
-
-
-    // ----------------------------------------
-    //                  Size
-    // ----------------------------------------
+    let body =
+        pickUnique(
+            bodyParts,
+            seed + 4,
+            3
+        );
 
     let size =
         pickFromList(
@@ -158,130 +42,110 @@ function generateAppearance(sycomonTypes, seed) {
         );
 
 
+// ----------------------------------------
+//           Appearance detail
+// ----------------------------------------
 
-    // ----------------------------------------
-    //              Body Parts
-    // ----------------------------------------
+    let detail;
 
-    let bodyPart1 =
-        pickFromList(
-            bodyParts,
-            seed + 6
-        );
+    if (legendary) {
 
+        detail = {
 
-    let bodyPart2 = null;
-
-
-    if (seededRandom(seed + 300) < 0.40) {
-
-        for (let i = 1; i <= bodyParts.length; i++) {
-
-            let candidate =
+            trait:
                 pickFromList(
-                    bodyParts,
-                    seed + 300 + i
-                );
+                    appearanceRareDetails,
+                    seed + 6
+                ),
 
+            match: 1
 
-            if (candidate !== bodyPart1) {
+        };
 
-                bodyPart2 = candidate;
-                break;
+    }
 
-            }
+    else if (seededRandom(seed + 7) < 0.20) {
 
-        }
+        detail = {
+
+            trait:
+                pickFromList(
+                    appearanceRareDetails,
+                    seed + 8
+                ),
+
+            match: 0
+
+        };
+
+    }
+
+    else {
+
+        detail =
+            pickTrait(
+                appearanceDetails,
+                types,
+                seed + 9
+            );
 
     }
 
 
+// ----------------------------------------
+//          Appearance templates
+// ----------------------------------------
 
-    // ----------------------------------------
-    //                Colors
-    // ----------------------------------------
+    let templates = [
 
-    let generatedColors =
-        generateColors(seed + 400);
+        `A ${size} ${species[0].trait.name} covered in ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
+        `A ${size} ${species[0].trait.name} with ${surfaces[0].trait.name} covering its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
+        `This ${size} ${species[0].trait.name} has ${surfaces[0].trait.name} all over its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-    // ----------------------------------------
-    //             Appearance Text
-    // ----------------------------------------
+        `A peculiar ${species[0].trait.name}. It is ${size} and covered in ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-    let appearanceTemplates = [
+        `A ${size} ${species[0].trait.name} ${species[1].trait.name} with ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-        `A ${size} ${speciesDescription} covered in ${surfaces[0]}.`,
+        `A ${size} ${species[0].trait.name} that has ${surfaces[0].trait.name} along its body and ${surfaces[1].trait.name} around its ${body[0]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-        `A ${size} ${speciesDescription} with ${surfaces[0]} covering its body.`,
+        `A ${size} ${species[0].trait.name} covered mostly in ${surfaces[0].trait.name}, with patches of ${surfaces[1].trait.name} across its ${body[1]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-        `A peculiar ${speciesDescription}. It is ${size} and covered in ${surfaces[0]}.`,
+        `This ${size} ${species[0].trait.name} has ${surfaces[0].trait.name} covering its ${body[0]} and ${surfaces[1].trait.name} lining its ${body[1]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
 
-        `This ${size} ${speciesDescription} has ${surfaces[0]} across its body.`,
+        `A strange ${species[0].trait.name} with a body of ${surfaces[0].trait.name}. Its ${body[2]} are covered in ${surfaces[1].trait.name}, and it has ${features[1].trait.name}. ${detail.trait.name}`,
 
-        `A ${size} ${speciesDescription} with ${surfaces[0]} along its body and ${featureResult.trait.name}.`,
+        `A ${size} ${species[0].trait.name} whose ${body[0]} are lined with ${surfaces[0].trait.name}. It has ${features[1].trait.name}. ${detail.trait.name}`,
 
-        `A ${size} ${speciesDescription} covered in ${surfaces[0]} with ${featureResult.trait.name}.`
+        `This ${species[0].trait.name} is ${size} and has a blend of ${surfaces[0].trait.name} and ${surfaces[1].trait.name} across its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
+
+        `A ${size} ${species[0].trait.name} with ${surfaces[0].trait.name} covering its ${body[0]} and ${surfaces[1].trait.name} around its ${body[1]}. It has ${features[1].trait.name}. ${detail.trait.name}`
 
     ];
 
 
-
-    if (surfaces.length > 1) {
-
-        appearanceTemplates.push(
-
-            `A ${size} ${speciesDescription} covered in ${surfaces[0]} with ${surfaces[1]} around its ${bodyPart1}.`,
-
-            `A ${size} ${speciesDescription} that has ${surfaces[0]} covering its body and ${surfaces[1]} along its ${bodyPart1}.`,
-
-            `A ${size} ${speciesDescription} with ${surfaces[0]} and ${surfaces[1]} covering different parts of its body.`
-
-            `This ${size} ${speciesDescription} has ${surfaces[0]} and ${surfaces[1]} patterned across its body.`,
-
-        );
-
-    }
-
-
-
-    let appearance =
-        pickFromList(
-            appearanceTemplates,
-            seed + 500
-        );
-
-
-    appearance +=
-        ` It has ${featureResult.trait.name}.`;
-
-
-    appearance +=
-        ` ${detailResult.trait.name}`;
-
-
+// ----------------------------------------
+//                 Return
+// ----------------------------------------
 
     return {
 
-        appearance: appearance,
+        text:
+            pickFromList(
+                templates,
+                seed + 100
+            ),
 
-        species: speciesDescription,
+        rarityScore:
 
-        surfaces: surfaces,
+            species[0].match +
 
-        feature: featureResult.trait.name,
+            surfaces[0].match +
 
-        detail: detailResult.trait.name,
+            features[0].match +
 
-        size: size,
-
-        colors: generatedColors,
-
-        bodyParts: [
-            bodyPart1,
-            bodyPart2
-        ]
+            detail.match
 
     };
 
