@@ -70,11 +70,11 @@ function generateSyCoMon(name) {
 // ----------------------------------------
 
     let appearance =
-        generateAppearance(
-            sycomonTypes,
-            seed + 300
-        );
-
+    generateAppearance(
+        sycomonTypes,
+        legendary,
+        seed + 300
+    );
 
     let colors =
         generateColors(
