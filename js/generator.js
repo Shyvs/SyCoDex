@@ -3,9 +3,9 @@ function generateSyCoMon(name) {
     let seed = createSeed(name.toLowerCase());
 
 
-  // ==========================
-// Typing
-// ==========================
+// ----------------------------------------
+//                  Typing
+// ----------------------------------------
 
 let type1 =
     pickFromList(types, seed);
@@ -13,7 +13,7 @@ let type1 =
 let sycomonTypes = [type1];
 
 
-// 60% chance for dual typing
+// 60% chance for dual type
 if (seededRandom(seed + 100) < 0.60) {
 
     let type2 = type1;
@@ -31,7 +31,7 @@ if (seededRandom(seed + 100) < 0.60) {
 
     }
 
-    // Only add it if it's different
+// Only add if different
     if (type2 !== type1) {
         sycomonTypes.push(type2);
     }
@@ -39,16 +39,16 @@ if (seededRandom(seed + 100) < 0.60) {
 }
 
 
-    // ==========================
-    // Legendary check
-    // ==========================
+// ----------------------------------------
+//             Legendary check
+// ----------------------------------------
 
     let legendary = checkLegendary(seed + 200);
 
 
-    // ==========================
-    // Traits
-    // ==========================
+// ----------------------------------------
+//                 Traits
+// ----------------------------------------
 
     let shapeResult =
         pickTrait(
@@ -71,10 +71,9 @@ if (seededRandom(seed + 100) < 0.60) {
             seed + 4
         );
 
-
-    // ==========================
-    // Details
-    // ==========================
+// ----------------------------------------
+//                  Details
+// ----------------------------------------
 
     let detailResult;
 
@@ -116,32 +115,31 @@ if (seededRandom(seed + 100) < 0.60) {
     }
 
 
-    // ==========================
-    // Flavor
-    // ==========================
+// ----------------------------------------
+//                 Flavor
+// ----------------------------------------
 
-    let size =
-        pickFromList(
-            sizes,
-            seed + 8
-        );
+let size =
+    pickFromList(
+        sizes,
+        seed + 8
+    );
 
-    let habitat =
-        pickFromList(
-            habitats,
-            seed + 9
-        );
+let habitat =
+    pickFromList(
+        habitats,
+        seed + 9
+    );
 
-    let personality =
-        pickFromList(
-            personalities,
-            seed + 10
-        );
+let personality =
+    generatePersonality(
+        seed + 10
+    );
 
-
- // ==========================
-// Colors
-// ==========================
+    
+// ----------------------------------------
+//                  Colors
+// ----------------------------------------
 
 let palette =
     generatePalette(seed + 20);
@@ -177,9 +175,9 @@ if (palette.accent !== null) {
 }
 
 
-    // ==========================
-    // Rarity
-    // ==========================
+// ----------------------------------------
+//                  Rarity
+// ----------------------------------------
 
     let rarity;
 
@@ -205,18 +203,18 @@ if (palette.accent !== null) {
     }
 
 
-    // ==========================
-    // Appearance
-    // ==========================
+// ----------------------------------------
+//               Appearance
+// ----------------------------------------
 
   let appearance =
     `A ${size} ${shapeResult.trait.name} with ${materialResult.trait.name}. ` +
     `It has ${featureResult.trait.name}. ` +
     `${detailResult.trait.name}`;
 
-    // ==========================
-    // Return
-    // ==========================
+// ----------------------------------------
+//                  Return
+// ----------------------------------------
 
     return {
 
