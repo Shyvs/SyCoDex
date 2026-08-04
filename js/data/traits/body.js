@@ -119,7 +119,12 @@ const body = [
     name: "humanoid",
     types: ["Psychic", "Fighting", "Fairy"]
 },
-
+    
+{
+    name: "strange object",
+    types: ["Ghost", "Steel", "Fairy", "Electric"]
+},
+    
 {
     name: "blob",
     types: ["Normal", "Poison", "Water", "Ghost"]
