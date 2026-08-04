@@ -1,32 +1,21 @@
-function generateColor(seed) {
+function generateColors(types, seed) {
 
-    let color =
-        pickFromList(
-            colors,
+    let paletteResult =
+        pickTrait(
+            colorPalettes,
+            types,
             seed
         );
 
-    let modifier =
-        pickFromList(
-            color.modifiers,
-            seed + 1
-        );
 
-    if (modifier === "") {
-        return color.name;
-    }
+    return {
 
-    return `${modifier} ${color.name}`;
+        colors:
+            paletteResult.trait.colors,
 
-}
+        rarityScore:
+            paletteResult.match
 
-
-function generateColors(seed) {
-
-    return pickUniqueGenerated(
-        generateColor,
-        seed,
-        3
-    );
+    };
 
 }
