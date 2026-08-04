@@ -2,16 +2,19 @@ function generateBehavior(types, seed, legendary) {
 
     let behaviorResult;
 
-
     // Legendary SyCoMon always gets a rare behavior
     if (legendary) {
 
         behaviorResult = {
-            trait: pickFromList(
-                rareBehaviors,
-                seed
-            ),
+
+            trait:
+                pickFromList(
+                    rareBehaviors,
+                    seed
+                ),
+
             match: 1
+
         };
 
     } 
@@ -20,11 +23,15 @@ function generateBehavior(types, seed, legendary) {
     else if (seededRandom(seed + 50) < 0.20) {
 
         behaviorResult = {
-            trait: pickFromList(
-                rareBehaviors,
-                seed
-            ),
+
+            trait:
+                pickFromList(
+                    rareBehaviors,
+                    seed
+                ),
+
             match: 0
+
         };
 
     } 
@@ -40,6 +47,15 @@ function generateBehavior(types, seed, legendary) {
 
     }
 
-    return behaviorResult.trait.name;
+
+    return {
+
+        text:
+            behaviorResult.trait.name,
+
+        rarityScore:
+            behaviorResult.match
+
+    };
 
 }
