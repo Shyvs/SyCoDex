@@ -5,8 +5,9 @@ function generateAppearance(types, legendary, seed) {
 // ----------------------------------------
 
     let species =
-        pickUniqueFromList(
+        pickUniqueTraits(
             appearanceSpecies,
+            types,
             seed + 1,
             2
         );
