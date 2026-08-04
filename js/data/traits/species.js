@@ -130,9 +130,4 @@ const species = [
     types: ["Normal", "Poison", "Water", "Ghost"]
 },
 
-{
-    name: "jelly",
-    types: ["Water", "Poison", "Ghost", "Ice"]
-}
-
 ];
