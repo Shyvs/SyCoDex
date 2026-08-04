@@ -51,8 +51,7 @@ function pickTrait(list, types, seed) {
             nonMatching.push(trait);
         }
 
-    });
-
+});
 
     let useMatching =
         seededRandom(seed) < 0.75;
@@ -73,8 +72,7 @@ function pickTrait(list, types, seed) {
         pool = nonMatching;
         matched = 0;
 
-    }
-
+}
 
     let trait =
         pool[
@@ -83,12 +81,27 @@ function pickTrait(list, types, seed) {
             )
         ];
 
-
     return {
 
         trait: trait,
         match: matched
 
     };
+
+}
+
+function pickDifferent(generator, startSeed, forbidden, maxAttempts = 20) {
+
+    for (let i = 0; i < maxAttempts; i++) {
+
+        let result =
+            generator(startSeed + i);
+
+        if (result !== forbidden) {
+            return result;
+        }
+    }
+
+    return forbidden;
 
 }
