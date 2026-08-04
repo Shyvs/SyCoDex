@@ -64,12 +64,10 @@ function generate() {
     document.getElementById("sycomonHabitat").innerText =
         sycomon.habitat;
 
-    // Hide previous discovery info
-    document.getElementById("discoveredSection").style.display =
-        "none";
+  // Reset discovery info
 
-    document.getElementById("sycomonDiscovery").innerText =
-        "";
+document.getElementById("sycomonDiscovery").innerText =
+    "Undiscovered";
 
     // Show Log Sighting button
     document.getElementById("logButton").style.display =
@@ -91,11 +89,7 @@ function logSighting() {
     window.currentSyCoMon.discoveredBy =
         discoverer;
 
-    // Update page
-    document.getElementById("sycomonDiscovery").innerText =
-        "Discovered by " + discoverer;
-
-    document.getElementById("discoveredSection").style.display =
-        "block";
+  document.getElementById("sycomonDiscovery").innerText =
+    discoverer;
 
 }
