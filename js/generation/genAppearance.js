@@ -29,7 +29,7 @@ function generateAppearance(types, legendary, seed) {
         );
 
     let body =
-        pickUnique(
+        pickUniqueFromList(
             bodyParts,
             seed + 4,
             3
