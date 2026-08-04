@@ -151,7 +151,7 @@ function pickUniqueTraits(list, types, seed, count) {
 //       Pick multiple unique values
 // ----------------------------------------
 
-function pickUnique(list, seed, count) {
+function pickUniqueFromList(list, seed, count) {
 
     let results = [];
 
