@@ -1,26 +1,90 @@
+/* ==========================
+   GLOBAL
+========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
 body {
 
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #172033, #05070d 70%);
+
+    color: #e6f7ff;
 
     text-align: center;
 
-    background: #090b14;
+    min-height: 100vh;
 
-    color: #e8e8ff;
+    margin: 0;
+
+    padding: 30px;
 
 }
 
+
+/* ==========================
+   TITLE
+========================== */
 
 
 h1 {
 
+    font-size: 48px;
+
     color: #00eaff;
 
+    letter-spacing: 4px;
+
     text-shadow:
-        0 0 10px #00eaff;
+        0 0 10px #00eaff,
+        0 0 25px #0077ff;
+
+    margin-bottom: 10px;
 
 }
 
+
+h2 {
+
+    font-size: 38px;
+
+    color: white;
+
+    margin-top: 0;
+
+    text-shadow:
+        0 0 8px #00eaff;
+
+}
+
+
+/* ==========================
+   INPUT + BUTTONS
+========================== */
+
+
+input {
+
+    background: #0b1120;
+
+    color: white;
+
+    border: 2px solid #334155;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-size: 18px;
+
+    width: 250px;
+
+}
 
 
 button {
@@ -31,58 +95,82 @@ button {
 
     border: 2px solid #00eaff;
 
-    padding: 12px 30px;
+    border-radius: 10px;
 
-    font-size: 18px;
+    padding: 12px 35px;
 
-    border-radius: 8px;
+    margin: 10px;
+
+    font-size: 20px;
+
+    font-weight: bold;
 
     cursor: pointer;
 
     transition: 0.2s;
 
-}
+    box-shadow:
+        0 0 10px rgba(0,234,255,0.3);
 
+}
 
 
 button:hover {
 
     background: #00eaff;
 
-    color: #090b14;
+    color: #05070d;
+
+    box-shadow:
+        0 0 20px #00eaff;
 
 }
 
 
 
+/* ==========================
+   MAIN CARD
+========================== */
+
+
 #sycomonCard {
-
-    width: 900px;
-
-    max-width: 95%;
-
-    margin: 30px auto;
-
-    padding: 25px;
 
     display: flex;
 
     gap: 25px;
 
-    background: #11131f;
+    width: 950px;
 
-    border: 2px solid #30364d;
+    max-width: 95%;
 
-    border-radius: 15px;
+    margin: 35px auto;
+
+    padding: 25px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #111827,
+            #080b13
+        );
+
+    border: 2px solid #26334d;
+
+    border-radius: 18px;
 
     box-shadow:
-        0 0 20px rgba(0, 234, 255, 0.15);
+
+        0 0 25px rgba(0,234,255,0.15);
 
 }
 
 
 
-/* LEFT SIDE */
+/* ==========================
+   LEFT COLUMN
+========================== */
+
 
 .leftColumn {
 
@@ -92,37 +180,39 @@ button:hover {
 
 
 
-#sycomonName {
-
-    font-size: 36px;
-
-    color: #ffffff;
-
-}
-
-
-
 .imageBox {
 
-    height: 300px;
+    height: 320px;
 
-    background: #05070d;
+    background:
 
-    border: 2px solid #30364d;
+        repeating-linear-gradient(
+            0deg,
+            #080b13,
+            #080b13 3px,
+            #0d1422 3px,
+            #0d1422 6px
+        );
 
-    border-radius: 12px;
+    border: 2px solid #334155;
 
-    display: flex;
+    border-radius: 15px;
 
-    justify-content: center;
+    display:flex;
 
-    align-items: center;
+    justify-content:center;
 
-    font-size: 80px;
+    align-items:center;
 
-    color: #00eaff;
+    font-size: 90px;
 
-    margin-bottom: 20px;
+    color:#00eaff;
+
+    margin-bottom:20px;
+
+    box-shadow:
+
+        inset 0 0 20px rgba(0,234,255,0.15);
 
 }
 
@@ -130,23 +220,32 @@ button:hover {
 
 .discoveryInfo {
 
-    margin-top: 20px;
+    margin-top:25px;
 
-    font-size: 14px;
+    padding:15px;
 
-    color: #9ca3af;
+    background:#090d18;
+
+    border:1px solid #26334d;
+
+    border-radius:10px;
+
+    color:#94a3b8;
+
+    font-size:14px;
 
 }
 
 
 
+/* ==========================
+   RIGHT COLUMN
+========================== */
 
-
-/* RIGHT SIDE */
 
 .rightColumn {
 
-    width: 65%;
+    width:65%;
 
 }
 
@@ -154,17 +253,23 @@ button:hover {
 
 .infoBox {
 
-    background: #171b2b;
+    background:
 
-    border: 1px solid #30364d;
+        linear-gradient(
+            145deg,
+            #151c2e,
+            #0c111c
+        );
 
-    border-radius: 12px;
+    border:1px solid #334155;
 
-    padding: 20px;
+    border-radius:14px;
 
-    margin-bottom: 20px;
+    padding:20px;
 
-    text-align: left;
+    margin-bottom:20px;
+
+    text-align:left;
 
 }
 
@@ -172,46 +277,244 @@ button:hover {
 
 .infoBox h3 {
 
-    color: #00eaff;
+    color:#00eaff;
 
-    border-bottom: 1px solid #30364d;
+    font-size:22px;
 
-    padding-bottom: 5px;
+    border-bottom:
+
+        1px solid #334155;
+
+    padding-bottom:8px;
+
+    margin-top:10px;
 
 }
 
 
 
-/* TYPE BADGES */
+/* ==========================
+   TYPE BOXES
+========================== */
+
+
+#sycomonType {
+
+    margin-bottom:15px;
+
+}
+
+
 
 .type {
 
-    display: inline-block;
+    display:inline-block;
 
-    padding: 6px 14px;
+    padding:8px 18px;
 
-    border-radius: 20px;
+    margin:5px;
 
-    margin: 5px;
+    border-radius:8px;
 
-    color: white;
+    color:white;
+
+    font-weight:bold;
+
+    text-transform:capitalize;
+
+    border:
+
+        2px solid rgba(255,255,255,0.3);
+
+    text-shadow:
+
+        1px 1px 3px black;
+
+    box-shadow:
+
+        0 0 8px rgba(255,255,255,0.15);
 
 }
 
 
 
-/* RARITY */
+/* Type Colors */
+
+
+.type.fire {
+    background:#ef4444;
+}
+
+.type.water {
+    background:#2563eb;
+}
+
+.type.grass {
+    background:#16a34a;
+}
+
+.type.electric {
+    background:#eab308;
+    color:black;
+}
+
+.type.ice {
+    background:#67e8f9;
+    color:black;
+}
+
+.type.fighting {
+    background:#b91c1c;
+}
+
+.type.poison {
+    background:#9333ea;
+}
+
+.type.ground {
+    background:#92400e;
+}
+
+.type.flying {
+    background:#818cf8;
+}
+
+.type.psychic {
+    background:#ec4899;
+}
+
+.type.bug {
+    background:#65a30d;
+}
+
+.type.rock {
+    background:#78716c;
+}
+
+.type.ghost {
+    background:#6d28d9;
+}
+
+.type.dragon {
+    background:#4338ca;
+}
+
+.type.dark {
+    background:#1f2937;
+}
+
+.type.steel {
+    background:#64748b;
+}
+
+.type.fairy {
+    background:#f472b6;
+}
+
+.type.normal {
+    background:#a8a29e;
+}
+
+
+
+/* ==========================
+   RARITY
+========================== */
+
 
 .rarity {
 
-    display: inline-block;
+    display:inline-block;
 
-    padding: 8px 15px;
+    padding:10px 22px;
 
-    background: black;
+    border-radius:10px;
 
-    color: white;
+    background:#000;
 
-    border-radius: 8px;
+    color:white;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+    border:2px solid #555;
+
+}
+
+
+
+/* rarity glow */
+
+
+.rarity.common {
+
+    border-color:#64748b;
+
+}
+
+
+
+.rarity.uncommon {
+
+    border-color:#00eaff;
+
+    box-shadow:
+
+        0 0 12px #00eaff;
+
+}
+
+
+
+.rarity.rare {
+
+    border-color:#a855f7;
+
+    box-shadow:
+
+        0 0 15px #a855f7;
+
+}
+
+
+
+.rarity.legendary {
+
+    border-color:#facc15;
+
+    box-shadow:
+
+        0 0 20px #facc15;
+
+    color:#facc15;
+
+}
+
+
+
+/* ==========================
+   MOBILE SUPPORT
+========================== */
+
+
+@media(max-width:800px) {
+
+
+    #sycomonCard {
+
+        flex-direction:column;
+
+    }
+
+
+    .leftColumn,
+    .rightColumn {
+
+        width:100%;
+
+    }
 
 }
