@@ -121,7 +121,7 @@ const colors = [
 
     {
         name: "brown",
-        modifiers: ["", "light", "dark", "vibrant", "muted"]
+        modifiers: ["", "light", "dark", "rich", "muddy"]
     },
 
     {
@@ -131,22 +131,22 @@ const colors = [
 
     {
         name: "black",
-        modifiers: [""]
+        modifiers: ["", "jet"]
     },
 
     {
         name: "white",
-        modifiers: [""]
+        modifiers: ["", "pure"]
     },
 
     {
         name: "silver",
-        modifiers: [""]
+        modifiers: ["", "shining"]
     },
 
     {
         name: "gold",
-        modifiers: [""]
+        modifiers: ["", "glistening"]
     },
 
     {
@@ -156,85 +156,28 @@ const colors = [
 
 ];
 
-function generateColor(seed) {
+function generateColors(seed) {
 
-    let color =
-        pickFromList(colors, seed);
+    let selectedColors = [];
 
-    let modifier =
-        pickFromList(
-            color.modifiers,
-            seed + 1
-        );
+    let attempts = 0;
 
-    if (modifier === "") {
-        return color.name;
-    }
+    while (selectedColors.length < 3 && attempts < 50) {
 
-    return modifier + " " + color.name;
+        let color =
+            generateColor(seed + attempts);
 
-}
+        if (!selectedColors.includes(color)) {
 
-
-function generatePalette(seed) {
-
-    let primary =
-        generateColor(seed);
-
-    // Find different secondary color
-    let secondary = primary;
-
-    for (let i = 1; i < 20; i++) {
-
-        secondary =
-            generateColor(seed + 10 + i);
-
-        if (secondary !== primary) {
-            break;
-        }
-
-    }
-
-
-    let accent = null;
-
-    if (seededRandom(seed + 20) < 0.30) {
-
-        for (let i = 1; i < 20; i++) {
-
-            accent =
-                generateColor(seed + 30 + i);
-
-            if (
-                accent !== primary &&
-                accent !== secondary
-            ) {
-                break;
-            }
+            selectedColors.push(color);
 
         }
 
-        // If this never finds a unique accent, just don't use one
-        
-        if (
-            accent === primary ||
-            accent === secondary
-        ) {
-            accent = null;
-        }
+        attempts++;
 
     }
 
-
-    return {
-
-        primary: primary,
-
-        secondary: secondary,
-
-        accent: accent
-
-    };
+    return selectedColors;
 
 }
 
