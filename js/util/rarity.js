@@ -1,28 +1,31 @@
-function calculateRarity(score) {
+function calculateRarity(seed) {
 
-    if (score >= 3) {
+    let roll =
+        seededRandom(seed);
+
+
+    if (roll < 0.50) {
 
         return "Common";
 
     }
 
-    if (score >= 2) {
+    else if (roll < 0.80) {
 
         return "Uncommon";
 
     }
 
-    return "Rare";
+    else if (roll < 0.98) {
 
-}
+        return "Rare";
 
-function checkLegendary(seed) {
+    }
 
-    let roll = Math.floor(
-        seededRandom(seed) * 100
-    );
+    else {
 
+        return "Legendary";
 
-    return roll === 0;
+    }
 
 }
