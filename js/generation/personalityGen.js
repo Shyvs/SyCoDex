@@ -1,4 +1,4 @@
-const personalities = [
+const personalityGroups = [
 
     ["Cowardly", "Brave", "Bold", "Timid"],
     ["Lazy", "Energetic"],
@@ -20,21 +20,40 @@ const personalities = [
 function generatePersonality(seed) {
 
     let category1 =
-        pickFromList(personalities, seed);
+        pickFromList(
+            personalityGroups,
+            seed
+        );
+
 
     let category2 =
         pickDifferent(
-            s => pickFromList(personalities, s),
+            s => pickFromList(
+                personalityGroups,
+                s
+            ),
             seed + 20,
             category1
         );
 
+
     let personality1 =
-        pickFromList(category1, seed + 1);
+        pickFromList(
+            category1,
+            seed + 1
+        );
+
 
     let personality2 =
-        pickFromList(category2, seed + 2);
+        pickFromList(
+            category2,
+            seed + 2
+        );
 
-    return `${personality1} and ${personality2}.`;
+
+    return [
+        personality1,
+        personality2
+    ];
 
 }
