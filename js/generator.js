@@ -119,10 +119,10 @@ if (seededRandom(seed + 250) < 0.40) {
 
     } else {
 
-        // 10% chance for normal SyCoMon
+        // 20% chance for normal SyCoMon
         // to receive a rare detail
 
-        if (seededRandom(seed + 300) < 0.10) {
+        if (seededRandom(seed + 300) < 0.20) {
 
             detailResult = {
                 trait: pickFromList(
