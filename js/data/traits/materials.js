@@ -11,11 +11,6 @@ const materials = [
     types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Ice", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock"]
     // All except: steel, bug, water
 },
-    
-{
-    name: "smooth scales",
-    types: ["Dragon", "Water", "Poison", "Ice"]
-},
 
 {
     name: "crystalline plates",
@@ -29,17 +24,17 @@ const materials = [
 
 {
     name: "metal armor",
-    types: ["Steel", "Electric"]
+    types: ["Steel", "Electric", "Fighting"]
 },
 
 {
     name: "rubbery skin",
-    types: ["Electric", "Water", "Normal"]
+    types: ["Electric", "Water", "Normal" "Fighting"]
 },
 
 {
     name: "rocky armor",
-    types: ["Rock", "Ground", "Steel"]
+    types: ["Rock", "Ground", "Steel", "Fighting"]
 },
 
 {
@@ -54,7 +49,7 @@ const materials = [
 
 {
     name: "molten rock plating",
-    types: ["Fire", "Rock"]
+    types: ["Fire", "Rock", "Fighting"]
 },
 
 {
@@ -64,7 +59,7 @@ const materials = [
 
 {
     name: "shimmering scales",
-    types: ["Dragon", "Water", "Ice", "Fairy"]
+    types: ["Dragon", "Water", "Ice", "Fairy", "Poison"]
 },
 
 {
@@ -74,7 +69,7 @@ const materials = [
 
 {
     name: "leaves",
-    types: ["Grass", "Bug", "Fairy", "Poison"]
+    types: ["Grass", "Fairy", "Bug", "Poison"]
 },
 
 {
@@ -98,13 +93,13 @@ const materials = [
 },
 
 {
-    name: "iridescent scales",
-    types: ["Dragon", "Fairy", "Water", "Bug"]
+    name: "shell armor",
+    types: ["Water", "Rock", "Bug", "Steel", "Fighting", "Ice", "Ground"]
 },
 
 {
-    name: "shell armor",
-    types: ["Water", "Rock", "Bug", "Steel"]
+    name: "hard carapace",
+    types: ["Water", "Rock", "Bug", "Steel", "Fighting", "Ground"]
 }
 
 ];
