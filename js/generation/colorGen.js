@@ -23,14 +23,10 @@ function generateColor(seed) {
 
 function generateColors(seed) {
 
-    return pickUnique(
-
-        s => generateColor(s),
-
+    return pickUniqueGenerated(
+        generateColor,
         seed,
-
         3
-
     );
 
 }
