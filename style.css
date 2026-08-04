@@ -491,8 +491,10 @@ button:hover {
 #sycomonColors {
     display:flex;
     justify-content:center;
+    align-items:center;
+    width:100%;
     gap:8px;
-    margin:10px 0;
+    margin:10px auto;
 
 }
 
