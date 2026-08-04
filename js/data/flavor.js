@@ -1,3 +1,16 @@
+const bodyParts = [
+    "arms",
+    "legs",
+    "back",
+    "torso",
+    "head",
+    "neck",
+    "limbs",
+    "shoulders",
+    "spine",
+    "tail"
+];
+
 const sizes = [
     "tiny",
     "small",
