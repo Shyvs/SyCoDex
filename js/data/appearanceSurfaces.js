@@ -18,7 +18,7 @@ const appearanceSurfaces = [
 },
 
 {
-    name: "wood-like bark",
+    name: "bark-like scales",
     types: ["Grass", "Ground"]
 },
 
