@@ -1,5 +1,3 @@
-//Everything here should be lists that don't actually effect anything beyond random flavor.
-
 const bodyParts = [
     "arms",
     "legs",
@@ -11,54 +9,4 @@ const bodyParts = [
     "shoulders",
     "spine",
     "tail"
-];
-
-const sizes = [
-    "tiny",
-    "small",
-    "medium sized",
-    "large",
-    "gigantic"
-];
-
-
-const habitats = [
-    "Deep forests",
-    "Ancient ruins",
-    "Crystal caves",
-    "Mountain peaks",
-    "Volcanic regions",
-    "Coral reefs",
-    "Coastal shores",
-    "Deserts",
-    "Abandoned cities",
-    "Forgotten temples",
-    "Magical forests",
-    "Floating islands",
-    "Dream-like landscapes",
-    "Factories",
-    "Swamps",    
-    "Plains",  
-    "Islands",    
-    "Snowy caves",  
-    "Suburbs",
-    "Busy cities",  
-    "Flowery fields",
-    "Woodlands",
-    "Rivers",
-    "Calm waters",
-    "Far from civilization",
-    "Warm biomes",
-    "Cold biomes",
-    "Lively beaches",
-    "Rocky trails",
-    "Tall grass",
-    "Quiet ponds",
-    "Lively forests",
-    "Gardens",
-    "Fields",
-    "Graveyards",
-    "Abandoned buildings",
-    "Large bodies of water",
-    "Glowing underground forests"
 ];
