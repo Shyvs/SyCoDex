@@ -1,4 +1,4 @@
-const DEBUG_LEGENDARY = true;
+const DEBUG_LEGENDARY = false;
 function calculateRarity(seed) {
 
     if (DEBUG_LEGENDARY) {
