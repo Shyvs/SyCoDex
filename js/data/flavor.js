@@ -1,9 +1,9 @@
 const sizes = [
-    "Tiny",
-    "Small",
-    "Medium",
-    "Large",
-    "Gigantic"
+    "tiny",
+    "small",
+    "medium sized",
+    "large",
+    "gigantic"
 ];
 
 
