@@ -1,80 +1,24 @@
 function generateSyCoMon(name) {
 
     let seed =
-        createSeed(
-            name.toLowerCase()
-        );
+        createSeed(name.toLowerCase());
 
 
-// ----------------------------------------
-//                  Typing
-// ----------------------------------------
+    let sycomonTypes =
+        generateTypes(seed);
 
-    let type1 =
-        pickFromList(
-            types,
-            seed
-        );
-
-
-    let sycomonTypes = [
-        type1
-    ];
-
-
-    // 60% chance for dual type
-    if (seededRandom(seed + 100) < 0.60) {
-
-        let type2 = type1;
-
-
-        for (let i = 1; i <= types.length; i++) {
-
-            type2 =
-                pickFromList(
-                    types,
-                    seed + 137 + i
-                );
-
-
-            if (type2 !== type1) {
-                break;
-            }
-
-        }
-
-
-        if (type2 !== type1) {
-
-            sycomonTypes.push(
-                type2
-            );
-
-        }
-
-    }
-
-
-// ----------------------------------------
-//             Legendary Check
-// ----------------------------------------
 
     let legendary =
-        checkLegendary(
-            seed + 200
-        );
+        checkLegendary(seed + 200);
 
-
-// ----------------------------------------
-//              Generation
-// ----------------------------------------
 
     let appearance =
-    generateAppearance(
-        sycomonTypes,
-        legendary,
-        seed + 300
-    );
+        generateAppearance(
+            sycomonTypes,
+            legendary,
+            seed + 300
+        );
+
 
     let colors =
         generateColors(
@@ -85,8 +29,8 @@ function generateSyCoMon(name) {
     let behavior =
         generateBehavior(
             sycomonTypes,
-            seed + 500,
-            legendary
+            legendary,
+            seed + 500
         );
 
 
@@ -103,38 +47,12 @@ function generateSyCoMon(name) {
         );
 
 
-// ----------------------------------------
-//                  Rarity
-// ----------------------------------------
-
-    let rarity;
-
-
-    if (legendary) {
-
-        rarity =
-            "Legendary";
-
-    } 
-    
-    else {
-
-        let rarityScore =
+    let rarity =
+        calculateRarity(
             appearance.match +
-            behavior.match;
+            behavior.match
+        );
 
-
-        rarity =
-            calculateRarity(
-                rarityScore
-            );
-
-    }
-
-
-// ----------------------------------------
-//                  Return
-// ----------------------------------------
 
     return {
 
@@ -142,10 +60,9 @@ function generateSyCoMon(name) {
 
         types: sycomonTypes,
 
-        rarity: rarity,
+        rarity: legendary ? "Legendary" : rarity,
 
         legendary: legendary,
-
 
         appearance: appearance.text,
 
