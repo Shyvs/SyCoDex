@@ -21,7 +21,30 @@ const habitats = [
     "Magical forests",
     "Floating islands",
     "Dream-like landscapes",
-    "Hidden islands",
+    "Factories",
+    "Swamps",    
+    "Plains",  
+    "Islands",    
+    "Snowy caves",  
+    "Suburbs",
+    "Busy cities",  
+    "Flowery fields",
+    "Woodlands",
+    "Rivers",
+    "Calm waters",
+    "Far from civilization",
+    "Warm biomes",
+    "Cold biomes",
+    "Lively beaches",
+    "Rocky trails"
+    "Tall grass",
+    "Quiet ponds",
+    "Lively forests",
+    "Gardens",
+    "Fields",
+    "Graveyards",
+    "Abandoned buildings",
+    "Large bodies of water",
     "Glowing underground forests"
 ];
 
@@ -145,7 +168,7 @@ function generatePalette(seed) {
     let primary =
         generateColor(seed);
 
-    // Find a different secondary color
+    // Find different secondary color
     let secondary = primary;
 
     for (let i = 1; i < 20; i++) {
@@ -178,8 +201,8 @@ function generatePalette(seed) {
 
         }
 
-        // If we somehow never found a unique accent,
-        // just don't use one.
+        // If this never finds a unique accent, just don't use one
+        
         if (
             accent === primary ||
             accent === secondary
