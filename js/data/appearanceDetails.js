@@ -61,10 +61,6 @@ const rareAppearanceDetails = [
     types: ["Psychic", "Rock", "Ghost"]
 },
 {
-    name: "Its reflection moves independently from its body.",
-    types: ["Ghost", "Psychic", "Dark"]
-},
-{
     name: "Its body contains a mysterious glowing core.",
     types: ["Electric", "Fire", "Fairy"]
 },
@@ -93,7 +89,7 @@ const rareAppearanceDetails = [
     types: ["Ghost", "Electric", "Psychic"]
 },
 {
-    name: "It leaves behind a trail of glowing footprints.",
+    name: "It leaves behind a glowing trail.",
     types: ["Ghost", "Fairy", "Electric"]
 },
 {
