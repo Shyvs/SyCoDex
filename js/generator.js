@@ -50,11 +50,50 @@ if (seededRandom(seed + 100) < 0.60) {
 //                 Traits
 // ----------------------------------------
 
-  let bodyResult = pickTrait(
+// First body form
+let bodyResult = pickTrait(
     body,
     sycomonTypes,
     seed + 2
 );
+
+let bodyDescription =
+    bodyResult.trait.name;
+
+
+// 40% chance for second body form
+if (seededRandom(seed + 250) < 0.40) {
+
+    let secondBody =
+        bodyResult.trait;
+
+    // Try to find a different one
+    for (let i = 1; i <= body.length; i++) {
+
+        let candidate =
+            pickTrait(
+                body,
+                sycomonTypes,
+                seed + 250 + i
+            ).trait;
+
+        if (candidate.name !== bodyResult.trait.name) {
+
+            secondBody = candidate;
+            break;
+
+        }
+
+    }
+
+    if (secondBody.name !== bodyResult.trait.name) {
+
+        bodyDescription +=
+            " " + secondBody.name;
+
+    }
+
+}
 
  let materialResult = pickTrait(
      materials,
