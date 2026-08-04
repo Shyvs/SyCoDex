@@ -48,10 +48,10 @@ function generateSyCoMon(name) {
 
 
     let rarity =
-        calculateRarity(
-            appearance.match +
-            behavior.match
-        );
+    calculateRarity(
+        appearance.rarityScore +
+        behavior.rarityScore
+    );
 
 
     return {
