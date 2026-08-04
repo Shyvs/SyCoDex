@@ -55,7 +55,7 @@ const appearanceDetails = [
 ];
 
 
-const appearanceRareDetails = [
+const rareAppearanceDetails = [
 {
     name: "Its markings resemble ancient symbols.",
     types: ["Psychic", "Rock", "Ghost"]
