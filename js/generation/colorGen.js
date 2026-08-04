@@ -1,24 +1,36 @@
-function generateColors(seed) {
+function generateColor(seed) {
 
-    let selectedColors = [];
+    let color =
+        pickFromList(
+            colors,
+            seed
+        );
 
-    let attempts = 0;
+    let modifier =
+        pickFromList(
+            color.modifiers,
+            seed + 1
+        );
 
-    while (selectedColors.length < 3 && attempts < 50) {
-
-        let color =
-            generateColor(seed + attempts);
-
-        if (!selectedColors.includes(color)) {
-
-            selectedColors.push(color);
-
-        }
-
-        attempts++;
-
+    if (modifier === "") {
+        return color.name;
     }
 
-    return selectedColors;
+    return `${modifier} ${color.name}`;
+
+}
+
+
+function generateColors(seed) {
+
+    return pickUnique(
+
+        s => generateColor(s),
+
+        seed,
+
+        3
+
+    );
 
 }
