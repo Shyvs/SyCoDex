@@ -1,3 +1,5 @@
+// These should all be their own sentences. This is just an added bit at the end of appearance. 
+
 const details = [
     {
     name: "It has a distinctive pattern across its body.",
