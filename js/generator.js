@@ -284,6 +284,8 @@ let appearanceTemplates = [
     `A ${size.toLowerCase()} ${bodyDescription} with ${material1} all over it.`,
 
     `A ${size.toLowerCase()} ${bodyDescription} patterned with ${material1}.`,
+    
+    `A ${size.toLowerCase()} ${bodyDescription} It has ${material1} covering its back and limbs.`,
 
 ];
 
@@ -292,7 +294,7 @@ if (material2 !== null) {
 
     appearanceTemplates.push(
 
-        `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} along its back and ${material2} on its head.`,
+        `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} along its body and ${material2} around its head.`,
 
         `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} covering its body and ${material2} on its arms.`,
 
@@ -303,6 +305,10 @@ if (material2 !== null) {
         `A ${size.toLowerCase()} ${bodyDescription} covered in a blend of ${material1} and ${material2}.`,
         
         `A ${size.toLowerCase()} ${bodyDescription} covered in patterns of ${material1} and ${material2}.`,
+
+        `A ${size.toLowerCase()} ${bodyDescription}. It is patterend with ${material1} and ${material2}.`,
+
+        `A ${size.toLowerCase()} ${bodyDescription}. Covered mostly in ${material1}. It has patches of ${material2}.`,
         
     );
 
