@@ -243,8 +243,8 @@ if (palette.accent !== null) {
 //               Appearance
 // ----------------------------------------
 
-  let appearance =
-    `A ${size} ${bodyResult.trait.name} with ${materialResult.trait.name}. ` +
+let appearance =
+    `A ${size.toLowerCase()} ${bodyDescription} with ${materialResult.trait.name}. ` +
     `It has ${featureResult.trait.name}. ` +
     `${detailResult.trait.name}`;
 
