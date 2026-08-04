@@ -1,34 +1,61 @@
 // These should all be their own sentences. This is just an added bit at the end of appearance. 
 
-const details = [
-    {
+const appearanceDetails = [
+
+{
     name: "It has a distinctive pattern across its body.",
     types: ["Normal", "Bug", "Fairy"]
 },
+
 {
-    name: "It has a recognizable marking.",
+    name: "It has a unique marking that identifies individuals.",
     types: ["Normal", "Psychic", "Fairy"]
 },
+
 {
     name: "Small crystals naturally grow from its body.",
     types: ["Rock", "Ice", "Fairy"]
 },
+
 {
     name: "Its appearance changes slightly with the seasons.",
     types: ["Grass", "Ice", "Normal"]
 },
+
 {
     name: "Its colors become brighter when happy.",
     types: ["Fairy", "Electric", "Fire"]
 },
+
 {
-    name: "Its horns glow at night.",
+    name: "Its horns glow faintly at night.",
     types: ["Dragon", "Fairy", "Dark"]
 },
+
+{
+    name: "Small patterns shift across its surface.",
+    types: ["Psychic", "Bug", "Fairy"]
+},
+
+{
+    name: "It has unusual markings around its eyes.",
+    types: ["Dark", "Psychic", "Normal"]
+},
+
+{
+    name: "Its markings become more visible under certain lighting.",
+    types: ["Electric", "Psychic", "Fairy"]
+},
+
+{
+    name: "Its body gives off a faint shimmer.",
+    types: ["Fairy", "Electric", "Ice"]
+}
+
 ];
 
 
-const rareDetails = [
+const appearanceRareDetails = [
 {
     name: "Its markings resemble ancient symbols.",
     types: ["Psychic", "Rock", "Ghost"]
