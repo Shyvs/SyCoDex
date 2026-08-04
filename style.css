@@ -178,7 +178,9 @@ button:hover {
 
     display:flex;
 
-    justify-content:center;
+    flex-direction:column;
+
+    align-items:center;
 
 }
 
@@ -213,6 +215,8 @@ button:hover {
 
     color:#00eaff;
 
+    margin-bottom:20px;
+
     box-shadow:
 
         inset 0 0 20px rgba(0,234,255,.15);
@@ -222,7 +226,7 @@ button:hover {
 
 .discoveryInfo {
 
-    margin-top:25px;
+    width:300px;
 
     padding:15px;
 
@@ -237,7 +241,6 @@ button:hover {
     font-size:14px;
 
 }
-
 
 /* ------------------------
        RIGHT COLUMN
