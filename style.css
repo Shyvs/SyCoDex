@@ -4,64 +4,52 @@ body {
 
     text-align: center;
 
-    background: #dfe8ff;
+    background: #090b14;
+
+    color: #e8e8ff;
 
 }
+
 
 
 h1 {
 
-    font-size: 48px;
+    color: #00eaff;
 
-    margin-bottom: 10px;
-
-}
-
-
-#nameInput {
-
-    padding: 12px;
-
-    font-size: 18px;
-
-    border-radius: 10px;
-
-    border: 2px solid #555;
+    text-shadow:
+        0 0 10px #00eaff;
 
 }
+
 
 
 button {
 
-    padding: 12px 25px;
+    background: #111827;
 
-    font-size: 20px;
+    color: #00eaff;
 
-    font-weight: bold;
+    border: 2px solid #00eaff;
 
-    border-radius: 15px;
+    padding: 12px 30px;
 
-    border: none;
+    font-size: 18px;
+
+    border-radius: 8px;
 
     cursor: pointer;
 
-    margin: 10px;
-
-    background: #ffcc33;
+    transition: 0.2s;
 
 }
+
 
 
 button:hover {
 
-    transform: scale(1.05);
+    background: #00eaff;
 
-}
-
-
-#logButton {
-
-    background: #70c070;
+    color: #090b14;
 
 }
 
@@ -69,17 +57,36 @@ button:hover {
 
 #sycomonCard {
 
-    background: white;
+    width: 900px;
 
-    width: 400px;
+    max-width: 95%;
 
     margin: 30px auto;
 
     padding: 25px;
 
-    border-radius: 25px;
+    display: flex;
 
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    gap: 25px;
+
+    background: #11131f;
+
+    border: 2px solid #30364d;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.15);
+
+}
+
+
+
+/* LEFT SIDE */
+
+.leftColumn {
+
+    width: 35%;
 
 }
 
@@ -89,114 +96,122 @@ button:hover {
 
     font-size: 36px;
 
-    margin-bottom: 15px;
+    color: #ffffff;
 
 }
 
 
 
-.section {
+.imageBox {
 
-    background: #f4f4f4;
+    height: 300px;
 
-    padding: 15px;
+    background: #05070d;
 
-    margin: 15px 0;
+    border: 2px solid #30364d;
 
-    border-radius: 15px;
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 80px;
+
+    color: #00eaff;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.discoveryInfo {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #9ca3af;
 
 }
 
 
 
-.section b {
 
-    font-size: 20px;
+
+/* RIGHT SIDE */
+
+.rightColumn {
+
+    width: 65%;
+
+}
+
+
+
+.infoBox {
+
+    background: #171b2b;
+
+    border: 1px solid #30364d;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
 
 }
 
 
 
-.section p {
+.infoBox h3 {
 
-    margin-bottom: 0;
+    color: #00eaff;
+
+    border-bottom: 1px solid #30364d;
+
+    padding-bottom: 5px;
 
 }
+
+
+
+/* TYPE BADGES */
 
 .type {
+
     display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    margin: 5px;
+
     color: white;
-    padding: 4px 12px;
-    margin: 2px;
-    border-radius: 999px;
-    font-weight: bold;
-    min-width: 70px;
+
 }
 
-.fire { background:#EE8130; }
 
-.water { background:#6390F0; }
 
-.grass { background:#7AC74C; }
-
-.electric { background:#F7D02C; color:black; }
-
-.ice { background:#96D9D6; color:black; }
-
-.fighting { background:#C22E28; }
-
-.poison { background:#A33EA1; }
-
-.ground { background:#E2BF65; color:black; }
-
-.flying { background:#A98FF3; }
-
-.psychic { background:#F95587; }
-
-.bug { background:#A6B91A; }
-
-.rock { background:#B6A136; }
-
-.ghost { background:#735797; }
-
-.dragon { background:#6F35FC; }
-
-.dark { background:#705746; }
-
-.steel { background:#B7B7CE; color:black; }
-
-.fairy { background:#D685AD; }
-
-.normal { background:#A8A77A; color:black; }
-
+/* RARITY */
 
 .rarity {
 
-    display:inline-block;
+    display: inline-block;
 
-    padding:6px 16px;
+    padding: 8px 15px;
 
-    border-radius:999px;
+    background: black;
 
-    font-weight:bold;
+    color: white;
 
-    color:white;
+    border-radius: 8px;
 
 }
-
-.common {
-    background:#555;
-}
-
-.uncommon {
-    background:#2e8b57;
-}
-
-.rare {
-    background:#4169e1;
-}
-
-.legendary {
-    background:#8b0000;
-}
-
