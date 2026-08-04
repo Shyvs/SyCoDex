@@ -1,3 +1,5 @@
+// Features should all be appearance related.
+
 const features = [
 
     {
