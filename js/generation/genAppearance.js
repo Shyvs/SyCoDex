@@ -70,7 +70,7 @@ function generateAppearance(types, legendary, seed) {
 
             trait:
                 pickFromList(
-                    appearanceRareDetails,
+                    rareAppearanceDetails,
                     seed + 8
                 ),
 
