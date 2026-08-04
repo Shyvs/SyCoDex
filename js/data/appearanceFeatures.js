@@ -103,7 +103,7 @@ const appearanceFeatures = [
 },
 
 {
-    name: "gemstone-like eyes",
+    name: "gemstones embedded into it",
     types: ["Rock", "Fairy", "Psychic", "Ice"]
 },
 
@@ -113,7 +113,7 @@ const appearanceFeatures = [
 },
 
 {
-    name: "a unique crest on its head",
+    name: "a unique crest",
     types: ["Dragon", "Flying", "Steel", "Fairy"]
 },
 
