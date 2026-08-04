@@ -133,24 +133,37 @@ let templates = [
 //                 Return
 // ----------------------------------------
 
-    return {
+return {
 
-        text:
-            pickFromList(
-                templates,
-                seed + 100
-            ),
+    text:
+        pickFromList(
+            templates,
+            seed + 100
+        ),
 
-        rarityScore:
+    rarityScore:
 
-            species[0].match +
+        species.reduce(
+            (total, item) => total + item.match,
+            0
+        )
 
-            surfaces[0].match +
+        +
 
-            features[0].match +
+        surfaces.reduce(
+            (total, item) => total + item.match,
+            0
+        )
 
-            detail.match
+        +
 
-    };
+        features.reduce(
+            (total, item) => total + item.match,
+            0
+        )
 
-}
+        +
+
+        detail.match
+
+};
