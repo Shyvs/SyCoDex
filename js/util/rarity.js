@@ -1,3 +1,8 @@
+//0.00 - 0.50  Common     50%
+//0.50 - 0.80  Uncommon   30%
+//0.80 - 0.98  Rare       18%
+//0.98 - 1.00  Legendary   2%
+
 function calculateRarity(seed) {
 
     let roll =
