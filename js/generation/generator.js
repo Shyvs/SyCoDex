@@ -306,7 +306,7 @@ let appearance =
 // Add feature and detail after
 appearance +=
     ` It has ${featureResult.trait.name}.`;
-
+// I need to reorganize so that this is just part of the above section
 appearance +=
     ` ${detailResult.trait.name}`;
     
