@@ -102,7 +102,7 @@ let templates = [
 
     `A ${size} ${species[0].name} with ${surfaces[0].name} covering its body. It has ${features[0].name}. ${detail.trait.name}`,
 
-    `This ${size} ${species[0].name} has ${surfaces[0].name} all over its body. It has ${features[0].name}. ${detail.trait.name}`,
+    `This ${size} ${species[0].name} has ${surfaces[0].name} all over its body and ${features[0].name}. ${detail.trait.name}`,
 
     `A peculiar ${species[0].name}. It is ${size} and covered in ${surfaces[0].name}. It has ${features[0].name}. ${detail.trait.name}`,
 
