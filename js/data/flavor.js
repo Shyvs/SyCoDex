@@ -36,7 +36,7 @@ const habitats = [
     "Warm biomes",
     "Cold biomes",
     "Lively beaches",
-    "Rocky trails"
+    "Rocky trails",
     "Tall grass",
     "Quiet ponds",
     "Lively forests",
