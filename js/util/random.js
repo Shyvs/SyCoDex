@@ -30,6 +30,45 @@ function pickFromList(list, seed) {
 
 }
 
+function pickUniqueTraits(list, types, seed, count) {
+
+    let results = [];
+
+    let attempts = 0;
+
+
+    while (
+        results.length < count &&
+        attempts < 100
+    ) {
+
+        let candidate =
+            pickTrait(
+                list,
+                types,
+                seed + attempts
+            );
+
+
+        if (
+            !results.some(
+                item => item.name === candidate.trait.name
+            )
+        ) {
+
+            results.push(candidate.trait);
+
+        }
+
+
+        attempts++;
+
+    }
+
+
+    return results;
+
+}
 
 function pickUniqueFromList(list, seed, count) {
 
