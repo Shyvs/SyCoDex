@@ -269,7 +269,7 @@ let appearanceTemplates = [
 
     `A ${size.toLowerCase()} ${bodyDescription} patterned with ${material1}.`,
     
-    `A ${size.toLowerCase()} ${bodyDescription} It has ${material1} covering its back and limbs.`,
+    `A ${size.toLowerCase()} ${bodyDescription}. It has ${material1} covering its back and limbs.`,
 
 ];
 
