@@ -1,4 +1,4 @@
-const body = [
+const species = [
 
 {
     name: "fox",
