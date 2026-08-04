@@ -1,4 +1,4 @@
-const behavior = [
+const behaviora = [
 {
     name: "It uses its surroundings to build shelter.",
     types: ["Grass", "Bug", "Ground"]
