@@ -1,3 +1,5 @@
+//Everything here should be lists that don't actually effect anything beyond random flavor.
+
 const bodyParts = [
     "arms",
     "legs",
@@ -156,49 +158,3 @@ const colors = [
 
 ];
 
-function generateColors(seed) {
-
-    let selectedColors = [];
-
-    let attempts = 0;
-
-    while (selectedColors.length < 3 && attempts < 50) {
-
-        let color =
-            generateColor(seed + attempts);
-
-        if (!selectedColors.includes(color)) {
-
-            selectedColors.push(color);
-
-        }
-
-        attempts++;
-
-    }
-
-    return selectedColors;
-
-}
-
-function generatePersonality(seed) {
-
-    let category1 =
-        pickFromList(personalities, seed);
-
-    let category2 =
-        pickDifferent(
-            s => pickFromList(personalities, s),
-            seed + 20,
-            category1
-        );
-
-    let personality1 =
-        pickFromList(category1, seed + 1);
-
-    let personality2 =
-        pickFromList(category2, seed + 2);
-
-    return `${personality1} and ${personality2}.`;
-
-}
