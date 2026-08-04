@@ -96,33 +96,33 @@ function generateAppearance(types, legendary, seed) {
 //          Appearance templates
 // ----------------------------------------
 
-    let templates = [
+let templates = [
 
-        `A ${size} ${species[0].trait.name} covered in ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} covered in ${surfaces[0].name}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} with ${surfaces[0].trait.name} covering its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} with ${surfaces[0].name} covering its body. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `This ${size} ${species[0].trait.name} has ${surfaces[0].trait.name} all over its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `This ${size} ${species[0].name} has ${surfaces[0].name} all over its body. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A peculiar ${species[0].trait.name}. It is ${size} and covered in ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A peculiar ${species[0].name}. It is ${size} and covered in ${surfaces[0].name}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} ${species[1].trait.name} with ${surfaces[0].trait.name}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} ${species[1].name} with ${surfaces[0].name}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} that has ${surfaces[0].trait.name} along its body and ${surfaces[1].trait.name} around its ${body[0]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} that has ${surfaces[0].name} along its body and ${surfaces[1].name} around its ${body[0]}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} covered mostly in ${surfaces[0].trait.name}, with patches of ${surfaces[1].trait.name} across its ${body[1]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} covered mostly in ${surfaces[0].name}, with patches of ${surfaces[1].name} across its ${body[1]}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `This ${size} ${species[0].trait.name} has ${surfaces[0].trait.name} covering its ${body[0]} and ${surfaces[1].trait.name} lining its ${body[1]}. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `This ${size} ${species[0].name} has ${surfaces[0].name} covering its ${body[0]} and ${surfaces[1].name} lining its ${body[1]}. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A strange ${species[0].trait.name} with a body of ${surfaces[0].trait.name}. Its ${body[2]} are covered in ${surfaces[1].trait.name}, and it has ${features[1].trait.name}. ${detail.trait.name}`,
+    `A strange ${species[0].name} with a body of ${surfaces[0].name}. Its ${body[2]} are covered in ${surfaces[1].name}, and it has ${features[1].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} whose ${body[0]} are lined with ${surfaces[0].trait.name}. It has ${features[1].trait.name}. ${detail.trait.name}`,
+    `A ${size} ${species[0].name} whose ${body[0]} are lined with ${surfaces[0].name}. It has ${features[1].name}. ${detail.trait.name}`,
 
-        `This ${species[0].trait.name} is ${size} and has a blend of ${surfaces[0].trait.name} and ${surfaces[1].trait.name} across its body. It has ${features[0].trait.name}. ${detail.trait.name}`,
+    `This ${species[0].name} is ${size} and has a blend of ${surfaces[0].name} and ${surfaces[1].name} across its body. It has ${features[0].name}. ${detail.trait.name}`,
 
-        `A ${size} ${species[0].trait.name} with ${surfaces[0].trait.name} covering its ${body[0]} and ${surfaces[1].trait.name} around its ${body[1]}. It has ${features[1].trait.name}. ${detail.trait.name}`
+    `A ${size} ${species[0].name} with ${surfaces[0].name} covering its ${body[0]} and ${surfaces[1].name} around its ${body[1]}. It has ${features[1].name}. ${detail.trait.name}`
 
-    ];
+];
 
 
 // ----------------------------------------
