@@ -220,7 +220,7 @@ function generateAppearance(sycomonTypes, seed) {
 
         `This ${size} ${speciesDescription} has ${surfaces[0]} across its body.`,
 
-        `A ${size} ${speciesDescription} with ${surfaces[0]} along its body and unusual ${featureResult.trait.name}.`,
+        `A ${size} ${speciesDescription} with ${surfaces[0]} along its body and ${featureResult.trait.name}.`,
 
         `A ${size} ${speciesDescription} covered in ${surfaces[0]} with ${featureResult.trait.name}.`
 
@@ -237,6 +237,8 @@ function generateAppearance(sycomonTypes, seed) {
             `A ${size} ${speciesDescription} that has ${surfaces[0]} covering its body and ${surfaces[1]} along its ${bodyPart1}.`,
 
             `A ${size} ${speciesDescription} with ${surfaces[0]} and ${surfaces[1]} covering different parts of its body.`
+
+            `This ${size} ${speciesDescription} has ${surfaces[0]} and ${surfaces[1]} patterned across its body.`,
 
         );
 
