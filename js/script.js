@@ -55,20 +55,43 @@ function generate() {
     document.getElementById("sycomonAppearance").innerText =
         sycomon.appearance;
 
-    document.getElementById("sycomonColors").innerText =
-        sycomon.colors;
+    // Colors
+const colorContainer =
+    document.getElementById("sycomonColors");
 
+colorContainer.innerHTML = "";
+
+sycomon.colors.colors.forEach(hex => {
+
+    const swatch =
+        document.createElement("div");
+
+    swatch.className =
+        "color-swatch";
+
+    swatch.style.backgroundColor =
+        hex;
+
+    swatch.title =
+        hex;
+
+    colorContainer.appendChild(swatch);
+
+});
+
+    // Behavior
     document.getElementById("sycomonBehavior").innerText =
         sycomon.behavior;
-    
+
+    // Personality
     document.getElementById("sycomonPersonality").innerText =
         sycomon.personality;
-
+    
+    // Habitat
     document.getElementById("sycomonHabitat").innerText =
         sycomon.habitat;
 
-  // Reset discovery info
-
+   // Reset discovery info
 document.getElementById("sycomonDiscovery").innerText =
     "Undiscovered";
 
