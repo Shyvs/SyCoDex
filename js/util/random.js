@@ -2,7 +2,7 @@ function createSeed(name) {
 
     let seed = 0;
 
-    for(let i = 0; i < name.length; i++) {
+    for (let i = 0; i < name.length; i++) {
         seed += name.charCodeAt(i);
     }
 
@@ -36,33 +36,31 @@ function pickTrait(list, types, seed) {
     let matching = [];
     let nonMatching = [];
 
-
     list.forEach(trait => {
 
         let matches = trait.types.some(type =>
             types.includes(type)
         );
 
+        if (matches) {
 
-        if(matches) {
             matching.push(trait);
-        } 
-        else {
+
+        } else {
+
             nonMatching.push(trait);
+
         }
 
-});
+    });
 
     let useMatching =
         seededRandom(seed) < 0.75;
 
-
     let pool;
-
     let matched;
 
-
-    if(useMatching && matching.length > 0) {
+    if (useMatching && matching.length > 0) {
 
         pool = matching;
         matched = 1;
@@ -72,7 +70,7 @@ function pickTrait(list, types, seed) {
         pool = nonMatching;
         matched = 0;
 
-}
+    }
 
     let trait =
         pool[
@@ -90,6 +88,7 @@ function pickTrait(list, types, seed) {
 
 }
 
+
 function pickDifferent(generator, startSeed, forbidden, maxAttempts = 20) {
 
     for (let i = 0; i < maxAttempts; i++) {
@@ -100,8 +99,83 @@ function pickDifferent(generator, startSeed, forbidden, maxAttempts = 20) {
         if (result !== forbidden) {
             return result;
         }
+
     }
 
     return forbidden;
+
+}
+
+
+// ----------------------------------------
+//    Pick multiple unique typed traits
+// ----------------------------------------
+
+function pickUniqueTraits(list, types, seed, count) {
+
+    let results = [];
+
+    for (let i = 0; i < count; i++) {
+
+        for (let j = 0; j < list.length; j++) {
+
+            let candidate =
+                pickTrait(
+                    list,
+                    types,
+                    seed + (i * 100) + j
+                );
+
+            let duplicate =
+                results.some(result =>
+                    result.trait.name === candidate.trait.name
+                );
+
+            if (!duplicate) {
+
+                results.push(candidate);
+                break;
+
+            }
+
+        }
+
+    }
+
+    return results;
+
+}
+
+
+// ----------------------------------------
+//       Pick multiple unique values
+// ----------------------------------------
+
+function pickUnique(list, seed, count) {
+
+    let results = [];
+
+    for (let i = 0; i < count; i++) {
+
+        for (let j = 0; j < list.length; j++) {
+
+            let candidate =
+                pickFromList(
+                    list,
+                    seed + (i * 100) + j
+                );
+
+            if (!results.includes(candidate)) {
+
+                results.push(candidate);
+                break;
+
+            }
+
+        }
+
+    }
+
+    return results;
 
 }
