@@ -474,7 +474,22 @@ button:hover {
 
 }
 
+/* ------------------------
+       Color Palette
+------------------------ */
 
+#sycomonColors {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.color-swatch {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid black;
+}
 
 /* ------------------------
 MOBILE FRIENDLY SHENANIGANS
