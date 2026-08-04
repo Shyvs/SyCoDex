@@ -1,4 +1,4 @@
-const materials = [
+const appearanceSurfaces = [
 
 {
     name: "soft short fur",
