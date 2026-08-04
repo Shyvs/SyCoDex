@@ -50,26 +50,23 @@ if (seededRandom(seed + 100) < 0.60) {
 //                 Traits
 // ----------------------------------------
 
-    let shapeResult =
-        pickTrait(
-            shapes,
-            sycomonTypes,
-            seed + 2
-        );
+  let bodyResult = pickTrait(
+    body,
+    sycomonTypes,
+    seed + 2
+);
 
-    let materialResult =
-        pickTrait(
-            materials,
-            sycomonTypes,
-            seed + 3
-        );
+ let materialResult = pickTrait(
+     materials,
+     sycomonTypes,
+     seed + 3
+);
 
-    let featureResult =
-        pickTrait(
-            features,
-            sycomonTypes,
-            seed + 4
-        );
+  let featureResult = pickTrait(
+    features,
+    sycomonTypes,
+    seed + 4
+);
 
 // ----------------------------------------
 //                  Details
@@ -190,7 +187,7 @@ if (palette.accent !== null) {
 
         let rarityScore =
 
-            shapeResult.match +
+            bodyResult.match +
             materialResult.match +
             featureResult.match +
             detailResult.match;
