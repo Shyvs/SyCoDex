@@ -2,9 +2,27 @@ const materials = [
 
 {
     name: "soft fur",
-    types: ["Normal", "Fairy", "Ice"]
+    types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Water", "Ice", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock", "Steel", "Bug"]
+    // All types can have soft fur as relevant - because fuck it!
 },
-
+{
+    name: "fluffy fur",
+    types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Ice", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock"]
+    // All except: steel, bug, water
+},
+    
+{
+    name: "short fur",
+    types: ["Normal", "Fighting", "Psychic", "Poison", "Dragon", "Ghost", "Dark", "Fairy", "Water", "Ground", "Grass", "Fire", "Electric", "Flying", "Rock", "Steel"]
+    // All except ice, steel, bug
+},  
+    
+{
+    name: "velvety fur",
+    types: ["Normal", "Fighting", "Psychic", "Poison", "Ghost", "Dark", "Fairy"]
+    
+},
+    
 {
     name: "smooth scales",
     types: ["Dragon", "Water", "Poison"]
@@ -26,13 +44,8 @@ const materials = [
 },
 
 {
-    name: "mist-like energy",
-    types: ["Ghost", "Psychic", "Dark"]
-},
-
-{
     name: "rubbery skin",
-    types: ["Electric", "Water"]
+    types: ["Electric", "Water", "Normal"]
 },
 
 {
@@ -51,18 +64,13 @@ const materials = [
 },
 
 {
-    name: "molten rock-like skin",
+    name: "molten rock plating",
     types: ["Fire", "Rock"]
 },
 
 {
-    name: "frost-covered surface",
+    name: "frost",
     types: ["Ice", "Water"]
-},
-
-{
-    name: "velvety fur",
-    types: ["Fairy", "Normal", "Ice", "Psychic"]
 },
 
 {
@@ -71,27 +79,27 @@ const materials = [
 },
 
 {
-    name: "glass-like surfaces",
+    name: "a glass-like surface",
     types: ["Ice", "Rock", "Psychic", "Steel"]
 },
 
 {
-    name: "leaf-covered skin",
-    types: ["Grass", "Bug", "Fairy"]
+    name: "leaves",
+    types: ["Grass", "Bug", "Fairy", "Poison"]
 },
 
 {
-    name: "petal-like layers",
-    types: ["Grass", "Fairy", "Bug"]
+    name: "flower petals",
+    types: ["Grass", "Fairy", "Bug", "Poison"]
 },
 
 {
     name: "ceramic armor",
-    types: ["Steel", "Rock", "Fire"]
+    types: ["Steel", "Rock", "Fire", "Ground"]
 },
 
 {
-    name: "liquid-like body",
+    name: "liquid",
     types: ["Water", "Poison", "Ghost"]
 },
 
@@ -106,7 +114,7 @@ const materials = [
 },
 
 {
-    name: "shell-like armor",
+    name: "shell armor",
     types: ["Water", "Rock", "Bug", "Steel"]
 }
 
