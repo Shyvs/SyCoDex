@@ -29,7 +29,7 @@ const materials = [
 
 {
     name: "rubbery skin",
-    types: ["Electric", "Water", "Normal" "Fighting"]
+    types: ["Electric", "Water", "Normal", "Fighting"]
 },
 
 {
