@@ -281,9 +281,9 @@ if (material2 !== null) {
 
         `A ${size.toLowerCase()} ${bodyDescription} that has ${material1} covering its body and ${material2} on its arms.`,
 
-        `A ${size.toLowerCase()} ${bodyDescription} with ${material1} and ${material2}.`
+        `A ${size.toLowerCase()} ${bodyDescription} with ${material1} and ${material2}.`,
 
-        `A ${size.toLowerCase()} ${bodyDescription} covered in mostly ${material1} with some ${material2}.`        
+        `A ${size.toLowerCase()} ${bodyDescription} covered in mostly ${material1} with some ${material2}.`,        
 
         `A ${size.toLowerCase()} ${bodyDescription} covered in a blend of ${material1} and ${material2}.`,
         
