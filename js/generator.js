@@ -289,7 +289,7 @@ if (material2 !== null) {
         
         `A ${size.toLowerCase()} ${bodyDescription} covered in patterns of ${material1} and ${material2}.`,
 
-        `A ${size.toLowerCase()} ${bodyDescription}. It is patterend with ${material1} and ${material2}.`,
+        `A ${size.toLowerCase()} ${bodyDescription}. It is patterned with ${material1} and ${material2}.`,
 
         `A ${size.toLowerCase()} ${bodyDescription}. Covered mostly in ${material1}. It has patches of ${material2}.`,
         
