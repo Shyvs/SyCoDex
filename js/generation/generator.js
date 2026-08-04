@@ -24,10 +24,11 @@ function generateSyCoMon(name) {
         );
 
 
-    let colors =
-        generateColors(
-            seed + 400
-        );
+let colors =
+    generateColors(
+        sycomonTypes,
+        seed + 400
+    );
 
 
     let behavior =
