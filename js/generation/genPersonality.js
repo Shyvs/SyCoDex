@@ -32,9 +32,6 @@ function generatePersonality(seed) {
         );
 
 
-    return [
-        personality1,
-        personality2
-    ];
+    return `${personality1}, ${personality2}`;
 
 }
