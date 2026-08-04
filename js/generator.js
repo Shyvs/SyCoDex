@@ -2,7 +2,6 @@ function generateSyCoMon(name) {
 
     let seed = createSeed(name.toLowerCase());
 
-
 // ----------------------------------------
 //                  Typing
 // ----------------------------------------
@@ -12,8 +11,7 @@ let type1 =
 
 let sycomonTypes = [type1];
 
-
-// 60% chance for dual type
+// Chance for dual type (60%??)
 if (seededRandom(seed + 100) < 0.60) {
 
     let type2 = type1;
@@ -35,16 +33,13 @@ if (seededRandom(seed + 100) < 0.60) {
     if (type2 !== type1) {
         sycomonTypes.push(type2);
     }
-
 }
-
 
 // ----------------------------------------
 //             Legendary check
 // ----------------------------------------
 
     let legendary = checkLegendary(seed + 200);
-
 
 // ----------------------------------------
 //                 Traits
@@ -59,7 +54,6 @@ let bodyResult = pickTrait(
 
 let bodyDescription =
     bodyResult.trait.name;
-
 
 // 40% chance for second body form
 if (seededRandom(seed + 250) < 0.40) {
@@ -113,7 +107,6 @@ if (seededRandom(seed + 250) < 0.40) {
 
     let detailResult;
 
-
     if (legendary) {
 
         detailResult = {
@@ -150,7 +143,6 @@ if (seededRandom(seed + 250) < 0.40) {
         }
     }
 
-
 // ----------------------------------------
 //                 Flavor
 // ----------------------------------------
@@ -171,7 +163,6 @@ let personality =
     generatePersonality(
         seed + 10
     );
-
     
 // ----------------------------------------
 //                  Colors
@@ -180,10 +171,8 @@ let personality =
 let palette =
     generatePalette(seed + 20);
 
-
 let colorDescription =
     `${palette.primary.charAt(0).toUpperCase() + palette.primary.slice(1)} and ${palette.secondary}`;
-
 
 if (palette.accent !== null) {
 
@@ -196,7 +185,6 @@ if (palette.accent !== null) {
         `accented by ${palette.accent}`
 
     ];
-
 
     let accentText =
         pickFromList(
@@ -216,7 +204,6 @@ if (palette.accent !== null) {
 // ----------------------------------------
 
     let rarity;
-
 
     if (legendary) {
 
@@ -238,7 +225,6 @@ if (palette.accent !== null) {
             );
     }
 
-
 // ----------------------------------------
 //               Appearance
 // ----------------------------------------
@@ -247,7 +233,6 @@ let material1 =
     materialResult.trait.name;
 
 let material2 = null;
-
 
 // 35% chance for a second material
 if (seededRandom(seed + 400) < 0.35) {
@@ -272,7 +257,6 @@ if (seededRandom(seed + 400) < 0.35) {
 
 }
 
-
 let appearanceTemplates = [
 
     `A ${size.toLowerCase()} ${bodyDescription} covered in ${material1}.`,
@@ -288,7 +272,6 @@ let appearanceTemplates = [
     `A ${size.toLowerCase()} ${bodyDescription} It has ${material1} covering its back and limbs.`,
 
 ];
-
 
 if (material2 !== null) {
 
@@ -314,13 +297,11 @@ if (material2 !== null) {
 
 }
 
-
 let appearance =
     pickFromList(
         appearanceTemplates,
         seed + 500
     );
-
 
 // Add feature and detail after
 appearance +=
@@ -328,6 +309,7 @@ appearance +=
 
 appearance +=
     ` ${detailResult.trait.name}`;
+    
 // ----------------------------------------
 //                  Return
 // ----------------------------------------
