@@ -50,13 +50,16 @@ function pickUniqueTraits(list, types, seed, count) {
             );
 
 
-        if (
-            !results.some(
-                item => item.name === candidate.trait.name
-            )
-        ) {
+        let alreadyExists =
+            results.some(
+                item =>
+                    item.trait.name === candidate.trait.name
+            );
 
-            results.push(candidate.trait);
+
+        if (!alreadyExists) {
+
+            results.push(candidate);
 
         }
 
@@ -67,6 +70,8 @@ function pickUniqueTraits(list, types, seed, count) {
 
 
     return results;
+
+}
 
 }
 
