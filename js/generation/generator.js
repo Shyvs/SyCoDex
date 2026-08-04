@@ -8,8 +8,12 @@ function generateSyCoMon(name) {
         generateTypes(seed);
 
 
+    let rarity =
+        calculateRarity(seed + 200);
+
+
     let legendary =
-        checkLegendary(seed + 200);
+        rarity === "Legendary";
 
 
     let appearance =
@@ -29,8 +33,8 @@ function generateSyCoMon(name) {
     let behavior =
         generateBehavior(
             sycomonTypes,
-            legendary,
-            seed + 500
+            seed + 500,
+            legendary
         );
 
 
@@ -47,20 +51,13 @@ function generateSyCoMon(name) {
         );
 
 
-    let rarity =
-    calculateRarity(
-        appearance.rarityScore +
-        behavior.rarityScore
-    );
-
-
     return {
 
         name: name,
 
         types: sycomonTypes,
 
-        rarity: legendary ? "Legendary" : rarity,
+        rarity: rarity,
 
         legendary: legendary,
 
