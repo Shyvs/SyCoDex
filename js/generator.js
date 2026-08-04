@@ -205,7 +205,7 @@ if (palette.accent !== null) {
 // ----------------------------------------
 
   let appearance =
-    `A ${size} ${shapeResult.trait.name} with ${materialResult.trait.name}. ` +
+    `A ${size} ${bodyResult.trait.name} with ${materialResult.trait.name}. ` +
     `It has ${featureResult.trait.name}. ` +
     `${detailResult.trait.name}`;
 
