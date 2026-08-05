@@ -50,8 +50,47 @@ const appearanceDetails = [
 {
     name: "Its body gives off a faint shimmer.",
     types: ["Fairy", "Electric", "Ice"]
-}
+},
+{
+    name: "Its limbs gradually change color toward the ends.",
+    types: ["Ice", "Water", "Psychic"],
+},
+{
+    name: "Its body is decorated with ring-shaped markings.",
+    types: ["Psychic", "Fairy", "Normal"]
+},
+{
+    name: "Its body has naturally occurring spots.",
+    types: ["Grass", "Bug", "Normal"]
+},
+{
+    name: "Its whiskers curl into elegant spirals.",
+    types: ["Water", "Dragon", "Fairy"]
+},
 
+{
+    name: "Its body has naturally occurring stripes.",
+    types: ["Electric", "Normal", "Dark"]
+},
+{
+    name: "Its eyes have unusually shaped pupils.",
+    types: ["Dark", "Ghost", "Psychic"]
+},
+{
+    name: "Its claws are a different color than the rest of its body.",
+    types: ["Dark", "Steel", "Ground"]
+},
+
+{
+    name: "Its ears have brightly colored tips.",
+    types: ["Normal", "Fairy", "Electric"]
+},
+
+{
+    name: "Its tail ends in an unusual shape.",
+    types: ["Dragon", "Normal", "Poison"]
+},
+    
 ];
 
 
@@ -119,5 +158,38 @@ const rareAppearanceDetails = [
 {
     name: "Its reflection behaves strangely.",
     types: ["Ghost", "Psychic", "Dark"]
+},
+{
+    name: "Tiny stars seem to sparkle beneath its skin.",
+    types: ["Fairy", "Psychic", "Dark"]
+},
+{
+    name: "Constellation-like markings appear across its body.",
+    types: ["Psychic", "Fairy", "Dark"]
+},
+
+{
+    name: "Its eyes resemble tiny galaxies.",
+    types: ["Psychic", "Dark", "Fairy"]
+},
+
+{
+    name: "Floating rings slowly orbit around its body.",
+    types: ["Psychic", "Steel", "Fairy"]
+},
+
+{
+    name: "Fragments of stone drift weightlessly around it.",
+    types: ["Rock", "Ground", "Psychic"]
+},
+{
+    name: "Cracks across its body glow from within.",
+    types: ["Fire", "Rock", "Dragon"]
+},
+
+{
+    name: "Its body is surrounded by slowly orbiting shards of crystal.",
+    types: ["Rock", "Ice", "Psychic"]
 }
+    
 ];
